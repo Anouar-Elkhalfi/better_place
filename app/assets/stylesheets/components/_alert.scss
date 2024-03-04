@@ -1,22 +1,23 @@
 .alert {
   position: fixed;
-  top: 50%; /* Place l'alerte à mi-hauteur de la fenêtre */
-  left: 50%; /* Place l'alerte à mi-largeur de la fenêtre */
-  transform: translate(-50%, -50%); /* Centre l'alerte horizontalement et verticalement */
-  z-index: 1000; /* Assurez-vous que l'alerte apparaît au-dessus de tout le contenu */
-  width: 50%; /* Ajustez la largeur de l'alerte */
-  text-align: center; /* Centrer le texte à l'intérieur de l'alerte */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 50%;
+  text-align: center;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Ajoute une ombre à l'alerte */
 
   &.alert-info {
-    background-color: #cce5ff; /* Couleur d'arrière-plan pour l'alerte info */
-    border-color: #b8daff; /* Couleur de la bordure pour l'alerte info */
-    color: #004085; /* Couleur du texte pour l'alerte info */
+    background-color: #cce5ff;
+    border-color: #b8daff;
+    color: #004085;
   }
 
   &.alert-warning {
-    background-color: #fff3cd; /* Couleur d'arrière-plan pour l'alerte warning */
-    border-color: #ffeeba; /* Couleur de la bordure pour l'alerte warning */
-    color: #856404; /* Couleur du texte pour l'alerte warning */
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    color: #856404;
   }
 
   .btn-close {
@@ -27,3 +28,4 @@
     color: inherit;
   }
 }
+
