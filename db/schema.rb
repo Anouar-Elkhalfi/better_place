@@ -30,7 +30,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_132140) do
     t.string "status"
     t.bigint "review_id", null: false
     t.bigint "user_id", null: false
-    t.bigint "estimate_id", null: false
+    t.bigint "estimate_id"
     t.bigint "project_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

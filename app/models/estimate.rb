@@ -1,4 +1,4 @@
 class Estimate < ApplicationRecord
   belongs_to :user
-  has_many :project_request
+  has_one :project_request
 end
