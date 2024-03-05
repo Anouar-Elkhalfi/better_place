@@ -10,28 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_04_154852) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_05_132140) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "estimates", force: :cascade do |t|
-    t.decimal "price"
-    t.date "completion_date"
+    t.integer "price"
+    t.string "completion_date"
     t.text "message"
-    t.bigint "user_id", null: false
     t.string "file"
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_estimates_on_user_id"
   end
 
   create_table "project_requests", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "review_id", null: false
-    t.bigint "project_id", null: false
     t.string "status"
-    t.bigint "estimate_id", null: false
+    t.bigint "review_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "estimate_id"
+    t.bigint "project_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["estimate_id"], name: "index_project_requests_on_estimate_id"
@@ -40,13 +40,21 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_04_154852) do
     t.index ["user_id"], name: "index_project_requests_on_user_id"
   end
 
+  create_table "project_works", force: :cascade do |t|
+    t.bigint "work_id", null: false
+    t.bigint "project_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_project_works_on_project_id"
+    t.index ["work_id"], name: "index_project_works_on_work_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.string "location"
-    t.decimal "budget"
-    t.date "start_date"
-    t.date "end_date"
+    t.text "location"
+    t.integer "budget"
+    t.string "start_date"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -54,14 +62,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_04_154852) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
     t.integer "rating"
-    t.bigint "project_id", null: false
+    t.text "comment"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_reviews_on_project_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -79,9 +84,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_04_154852) do
     t.string "phone_number"
     t.string "role"
     t.string "skill"
-    t.string "siret_number"
+    t.integer "siret_number"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "works", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "recommanded_performance"
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "estimates", "users"
@@ -89,7 +103,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_04_154852) do
   add_foreign_key "project_requests", "projects"
   add_foreign_key "project_requests", "reviews"
   add_foreign_key "project_requests", "users"
+  add_foreign_key "project_works", "projects"
+  add_foreign_key "project_works", "works"
   add_foreign_key "projects", "users"
-  add_foreign_key "reviews", "projects"
   add_foreign_key "reviews", "users"
 end
