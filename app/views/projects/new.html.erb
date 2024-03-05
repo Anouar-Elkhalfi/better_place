@@ -1,0 +1,11 @@
+<!-- app/views/restaurants/_form.html.erb -->
+<%= simple_form_for (@project), data: { controller: "datepicker"} do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :location %>
+  <%= f.input :budget %>
+  <%= f.input :start_date, label: 'Date de début pour votre projet', as: :string, input_html: { data: { datepicker_target: "startDate"} } %>
+  <%= f.label :work_ids, "Select Works" %>
+  <%= f.collection_check_boxes :work_ids, Work.all, :id, :name %>
+  <%= f.submit %>
+<% end %>
