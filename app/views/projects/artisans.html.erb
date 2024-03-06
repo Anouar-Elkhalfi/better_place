@@ -1,5 +1,6 @@
 <h2>Veuillez selectionner des artisants pour votre projet: <%= @project.title %></h2>
+matching_users = User.where(role: 'artisan').where('skill IN (?)', project_skills)
 
-<% User.where(role: 'artisan').each do |artisant| %>
-  <%= artisant.email %>
+<% User.where(role: 'artisan').each do |artisan| %>
+  <%= artisan.email %>
 <% end %>
