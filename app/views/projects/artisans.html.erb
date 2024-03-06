@@ -1,10 +1,10 @@
-<h2>Veuillez selectionner des artisants pour votre projet : <%= @project.title %></h2>
+<h2>Veuillez selectionner des artisants pour votre projet : <strong><%= @project.title %></strong></h2>
 
 <div class="container-fluid custom-container">
   <div class="row">
     <div class="col-8">
       <div class="cards">
-        <% User.where(role: 'artisan').each do |artisan| %>
+        <% @artisans.each do |artisan| %>
           <%= render partial: 'artisan_card', locals: { artisan: artisan } %>
         <% end %>
       </div>

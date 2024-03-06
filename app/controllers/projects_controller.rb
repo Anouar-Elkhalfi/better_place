@@ -23,9 +23,9 @@ class ProjectsController < ApplicationController
   end
 
   def artisans
-
     skip_authorization
     @project = Project.find(params[:id])
+    @artisans = User.where(role: 'artisan', skill: @project.works.pluck(:name))
   end
 
   private
