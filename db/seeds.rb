@@ -25,7 +25,7 @@ Work.create!(
 )
 
 Work.create!(
-  name: "mûr",
+  name: "mur",
   description: "isolation des mûrs par l'intérieur.",
   recommanded_performance: "R > 4,5 m2.K/W",
   image_url: "mur.png"
@@ -58,14 +58,14 @@ skills_to_company_names = {
   "plafond" => ["Artisanat du Plafond", "Isolation Experts", "Plafonds Innovants", "Plafond & Co", "Plafond Pro"],
   "chauffage" => ["Chauffage Confort", "Énergie Thermique", "Pro Chauffage", "Chauffage Excellence", "Chauffage Solutions"],
   "portes et fenêtres" => ["Fenêtres Excellence", "Portes & Fenêtres Pros", "Menuiserie Innovante", "Fenêtres et Plus", "Fenêtres Pro"],
-  "mûr" => ["Isolation Murale Pro", "Maçonnerie & Isolation", "Murs Isolants", "Isolation Murale Solutions", "Mur & Co"],
+  "mur" => ["Isolation Murale Pro", "Maçonnerie & Isolation", "Murs Isolants", "Isolation Murale Solutions", "Mur & Co"],
   "plancher bas" => ["Plancher Bas Solutions", "Isolation Plancher Experts", "Pro Plancher", "Plancher Confort", "Isolation Sous-Plancher"],
   "eau chaude sanitaire" => ["Chauffe-Eau Experts", "Eau Chaude Confort", "Sanitaire Pro", "Chauffe-Eau Solutions", "Eau Chaude Excellence"],
   "ventilation" => ["Ventilation Performante", "Vents Innovateurs", "Pro Ventilation", "Ventilation Excellence", "Ventilation Solutions"]
 }
 
 # Seed for Artisans
-10.times do
+15.times do
   skill = skills_to_company_names.keys.sample
 
   custom_company_name = skills_to_company_names[skill].sample
@@ -77,6 +77,7 @@ skills_to_company_names = {
     phone_number: Faker::PhoneNumber.phone_number(country: 'FR'),
     skill: skill,
     siret_number: Faker::Number.unique.number(digits: 14),
+    role: "artisan",
     image: " "
   )
 end
