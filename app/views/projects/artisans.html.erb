@@ -1,0 +1,5 @@
+<h2>Veuillez selectionner des artisants pour votre projet: <%= @project.title %></h2>
+
+<% User.where(role: 'artisan').each do |artisant| %>
+  <%= artisant.email %>
+<% end %>
