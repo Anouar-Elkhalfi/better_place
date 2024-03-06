@@ -8,7 +8,7 @@
 .container1{
 background-image: asset-url("banner1.png");
 padding: 8px 74px;
-height: 93vh;
+height: 82vh;
 background-repeat: no-repeat;
 background-position: bottom;
 }
@@ -23,21 +23,12 @@ background-position: bottom;
 .banner1 h1 {
   color: #453E4E;
   font-family: 'Noto Sans', sans-serif;
-  padding-top: 14px;
+  padding-top: 5px;
+  font-size: 30px;
 }
 .banner1 h3 {
   color: #453E4E;
 }
-// .banner1 a {
-//   display: inline-block;
-//   background-color: #FCA601;
-//   color: white;
-//   font-size: 18px;
-//   padding: 10px 20px;
-//   border-radius: 50px;
-//   text-decoration: none;
-// }
-.imgbanner1 img {
-  width: 100%;
-  display: block;
+section {
+  height: 80vh;
 }
