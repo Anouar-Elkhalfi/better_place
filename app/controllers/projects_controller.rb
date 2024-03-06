@@ -23,6 +23,7 @@ class ProjectsController < ApplicationController
   end
 
   def artisans
+
     skip_authorization
     @project = Project.find(params[:id])
   end

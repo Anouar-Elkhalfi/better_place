@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get "/dashboard", to: "pages#dashboard"
 
   get "up" => "rails/health#show", as: :rails_health_check
+
 end

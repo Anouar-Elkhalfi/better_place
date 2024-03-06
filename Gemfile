@@ -51,6 +51,8 @@ gem "simple_form", github: "heartcombo/simple_form"
 gem "devise"
 gem "sassc-rails"
 gem "pundit"
+gem 'faker'
+
 
 group :development, :test do
   gem "dotenv-rails"
