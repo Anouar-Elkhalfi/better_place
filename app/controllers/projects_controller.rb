@@ -28,13 +28,6 @@ class ProjectsController < ApplicationController
     @artisans = User.where(role: 'artisan', skill: @project.works.pluck(:name))
   end
 
-  def project_requests_creation
-    @project.user = current_user
-    @project = Project.find(params[:id])
-    @project_request = Project_request.new()
-
-  end
-
   private
 
   def project_params
