@@ -13,10 +13,9 @@
       <ul class="navbar-nav me-auto">
 
       <% if user_signed_in? %>
+        <%= image_tag "https://avatars.githubusercontent.com/u/147706023?v=4", class: "avatar", id: "navbarDropdown", data: { bs_toggle: "dropdown" } %>
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Se Connecter
-          </a>
+
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <%= link_to "Espace Particuliers", "#", class: "dropdown-item" %>
             <%= link_to "Espace Pro", "#", class: "dropdown-item" %>
@@ -25,7 +24,7 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Se Connecter", new_user_session_path, class: "nav-link oval-border" %>
+          <%= link_to "Se Connecter", new_user_session_path, class: "btn-secondary" %>
         </li>
       <% end %>
 
