@@ -1,14 +1,7 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+require 'faker'
 
 Work.delete_all
+User.where(role: 'artisan').delete_all
 
 Work.create!(
   name: "plafond",
@@ -32,7 +25,7 @@ Work.create!(
 )
 
 Work.create!(
-  name: "mûr",
+  name: "mur",
   description: "isolation des mûrs par l'intérieur.",
   recommanded_performance: "R > 4,5 m2.K/W",
   image_url: "mur.png"
@@ -44,6 +37,7 @@ Work.create!(
   recommanded_performance: "",
   image_url: "plancher.png"
 )
+
 
 Work.create!(
   name: "eau chaude sanitaire",
@@ -58,3 +52,35 @@ Work.create!(
   recommanded_performance: "",
   image_url: "ventilation.png"
 )
+
+# Définissez un hash associant les skills aux listes de noms d'entreprises
+skills_to_company_names = {
+  "plafond" => ["Artisanat du Plafond", "Isolation Experts", "Plafonds Innovants", "Plafond & Co", "Plafond Pro"],
+  "chauffage" => ["Chauffage Confort", "Énergie Thermique", "Pro Chauffage", "Chauffage Excellence", "Chauffage Solutions"],
+  "portes et fenêtres" => ["Fenêtres Excellence", "Portes & Fenêtres Pros", "Menuiserie Innovante", "Fenêtres et Plus", "Fenêtres Pro"],
+  "mur" => ["Isolation Murale Pro", "Maçonnerie & Isolation", "Murs Isolants", "Isolation Murale Solutions", "Mur & Co"],
+  "plancher bas" => ["Plancher Bas Solutions", "Isolation Plancher Experts", "Pro Plancher", "Plancher Confort", "Isolation Sous-Plancher"],
+  "eau chaude sanitaire" => ["Chauffe-Eau Experts", "Eau Chaude Confort", "Sanitaire Pro", "Chauffe-Eau Solutions", "Eau Chaude Excellence"],
+  "ventilation" => ["Ventilation Performante", "Vents Innovateurs", "Pro Ventilation", "Ventilation Excellence", "Ventilation Solutions"]
+}
+
+artisan_skills = ["plafond", "chauffage", "portes et fenêtres", "mur", "plancher bas", "eau chaude sanitaire", "ventilation"]
+
+artisan_skills.each do |skill|
+  skill = skills_to_company_names.keys.sample
+  custom_company_name = skills_to_company_names[skill].sample
+
+  user = User.create!(
+    email: Faker::Internet.unique.email,
+    password: 'password',
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    address: Faker::Address.full_address,
+    phone_number: Faker::PhoneNumber.phone_number,
+    role: 'artisan',
+    company_name: custom_company_name,
+    skill: skill
+  )
+
+  puts "Created artisan user with skill: #{skill}, email: #{user.email}"
+end
