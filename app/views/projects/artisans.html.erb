@@ -3,3 +3,28 @@
 <% User.where(role: 'artisan').each do |artisant| %>
   <%= artisant.email %>
 <% end %>
+
+
+
+<!--<div class="container-fluid custom-container">
+  <div class="row">
+    <div class="col-8">
+      <div class="cards">
+        <% @cars.each do |car| %>
+        <%= link_to car_path(car), style: "text-decoration:none;" do %>
+            <div class="card-trip">
+              <%= image_tag car.photo.attached? ? cl_image_path(car.photo.key) : "https://source.unsplash.com/random/?car" %>
+              <div class="card-trip-infos">
+                <div>
+                  <h6><%= car.name %></h6>
+                  <p><%= car.category %></p>
+                </div>
+                <h2 class="card-trip-pricing" style="font-size: 12px;"><%= car.price %>€</h2>
+              </div>
+            </div>
+            <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div> -->
