@@ -24,12 +24,12 @@ class ProjectsController < ApplicationController
 
   def artisans
     @project = Project.find(params[:id])
-    @artisans = User.where(role: 'artisan', skill: @project.works.pluck(:name))
     authorize @project
+    @artisans = User.where(role: 'artisan', skill: @project.works.pluck(:name))
   end
 
   private
-  
+
   def project_params
     params.require(:project).permit(:title, :description, :location, :budget, :start_date, work_ids: [])
   end
