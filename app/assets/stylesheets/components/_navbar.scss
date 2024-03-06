@@ -1,10 +1,37 @@
-.navbar-lewagon {
+.navbar-betterplace {
   justify-content: space-between;
   background: white;
 }
-.navbar-lewagon .navbar-collapse {
+.navbar-betterplace .navbar-collapse {
   flex-grow: 0;
 }
-.navbar-lewagon .navbar-brand img {
-  width: 10%;
+.navbar-brand img{
+  width: 62px;
+  height: 46px;
+}
+.nav-link.oval-border {
+  position: relative;
+  display: inline-block;
+  padding: 0.5em 1em;
+  border: 2px solid;
+  border-radius: 50px;
+  color: white;
+  background-color: #453E4E;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+.nav-link.oval-border:hover {
+  background-color: #60565E;
+  color: white;
+}
+.nav-link.oval-border::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  border: 2px solid ;
+  border-radius: 50px;
+  z-index: -1;
 }
