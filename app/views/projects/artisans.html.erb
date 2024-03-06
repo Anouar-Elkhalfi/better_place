@@ -1,6 +1,13 @@
-<h2>Veuillez selectionner des artisants pour votre projet: <%= @project.title %></h2>
-matching_users = User.where(role: 'artisan').where('skill IN (?)', project_skills)
+<h2>Veuillez selectionner des artisants pour votre projet : <strong><%= @project.title %></strong></h2>
 
-<% User.where(role: 'artisan').each do |artisan| %>
-  <%= artisan.email %>
-<% end %>
+<div class="container-fluid custom-container">
+  <div class="row">
+    <div class="col-8">
+      <div class="cards">
+        <% @artisans.each do |artisan| %>
+          <%= render partial: 'artisan_card', locals: { artisan: artisan } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

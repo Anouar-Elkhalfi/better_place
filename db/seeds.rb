@@ -63,12 +63,13 @@ skills_to_company_names = {
   "eau chaude sanitaire" => ["Chauffe-Eau Experts", "Eau Chaude Confort", "Sanitaire Pro", "Chauffe-Eau Solutions", "Eau Chaude Excellence"],
   "ventilation" => ["Ventilation Performante", "Vents Innovateurs", "Pro Ventilation", "Ventilation Excellence", "Ventilation Solutions"]
 }
+
+artisan_skills = ["plafond", "chauffage", "portes et fenêtres", "mur", "plancher bas", "eau chaude sanitaire", "ventilation"]
+
+artisan_skills.each do |skill|
   skill = skills_to_company_names.keys.sample
   custom_company_name = skills_to_company_names[skill].sample
 
-  artisan_skills = ["plafond", "chauffage", "portes et fenêtres", "mur", "plancher bas", "eau chaude sanitaire", "ventilation"]
-
-artisan_skills.each do |skill|
   user = User.create!(
     email: Faker::Internet.unique.email,
     password: 'password',
