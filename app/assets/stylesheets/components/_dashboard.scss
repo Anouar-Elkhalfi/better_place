@@ -1,0 +1,20 @@
+.col-3 {
+  flex: 0 0 auto;
+  width: 25%;
+  margin-top: 150px;
+}
+
+
+th {
+  padding: 10px; /* Ajoute de l'espace entre le texte et les bords de chaque cellule d'en-tête */
+}
+
+td {
+  padding: 10px; /* Ajoute de l'espace entre le texte et les bords de chaque cellule de données */
+}
+
+
+li {
+  margin-top: 20px; /* Ajoute de l'espace en haut de chaque élément li */
+  margin-bottom: 10px; /* Ajoute de l'espace en bas de chaque élément li */
+}

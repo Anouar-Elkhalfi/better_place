@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <ul>
+        <li>Mes projets en cours </li>
+        <li> Mon historique de projet</li>
+        <li>Mon tableaus de bord</li>
+      </ul>
+    </div>
+    <div class="col-9">
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Location</th>
+              <th>Budget</th>
+              <th>Start Date</th>
+              <th>Status</th>
+              <th>Actions</th> <!-- Colonne de Navigation -->
+            </tr>
+          </thead>
+          <tbody>
+            <% @projects.each do |project| %>
+              <tr>
+                <td><%= project.title %></td>
+                <td><%= project.description %></td>
+                <td><%= project.location %></td>
+                <td><%= project.budget %></td>
+                <td><%= project.start_date %></td>
+                <td><%= project.status %></td>
+                <td>
+                  <%= link_to 'Edit', edit_project_path(project) %> |
+                  <%= link_to 'Delete', project_path(project), method: :delete, data: { confirm: 'Are you sure?' } %>
+                </td> <!-- Liens d'Édition et de Suppression -->
+              </tr>
+            <% end %>
+          </tbo
+
+    </div>
+  </div>
+</div>

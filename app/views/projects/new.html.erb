@@ -1,4 +1,8 @@
 <!-- app/views/restaurants/_form.html.erb -->
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col">
+      
 <%= simple_form_for (@project), data: { controller: "datepicker"} do |f| %>
   <%= f.input :title %>
   <%= f.input :description %>
@@ -9,3 +13,7 @@
   <%= f.collection_check_boxes :work_ids, Work.all, :id, :name %>
   <%= f.submit %>
 <% end %>
+
+    </div>
+  </div>
+</div>
