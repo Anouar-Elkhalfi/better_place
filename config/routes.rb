@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-<<<<<<< HEAD
-  get "up" => "rails/health#show", as: :rails_health_check
-=======
   resources :projects, except: [:index] do
     member do
       get :artisans
@@ -18,5 +15,4 @@ Rails.application.routes.draw do
 
   get "up" => "rails/health#show", as: :rails_health_check
 
->>>>>>> master
 end
