@@ -7,11 +7,11 @@ class ProjectPolicy < ApplicationPolicy
     true
   end
 
-  def artisans
+  def artisans?
     true
   end
 
-  def create
+  def create?
     true
   end
 
