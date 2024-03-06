@@ -63,21 +63,23 @@ skills_to_company_names = {
   "eau chaude sanitaire" => ["Chauffe-Eau Experts", "Eau Chaude Confort", "Sanitaire Pro", "Chauffe-Eau Solutions", "Eau Chaude Excellence"],
   "ventilation" => ["Ventilation Performante", "Vents Innovateurs", "Pro Ventilation", "Ventilation Excellence", "Ventilation Solutions"]
 }
-
-# Seed for Artisans
-15.times do
   skill = skills_to_company_names.keys.sample
-
   custom_company_name = skills_to_company_names[skill].sample
 
-  User.create!(
+  artisan_skills = ["plafond", "chauffage", "portes et fenêtres", "mur", "plancher bas", "eau chaude sanitaire", "ventilation"]
+
+artisan_skills.each do |skill|
+  user = User.create!(
+    email: Faker::Internet.unique.email,
+    password: 'password',
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    address: Faker::Address.full_address,
+    phone_number: Faker::PhoneNumber.phone_number,
+    role: 'artisan',
     company_name: custom_company_name,
-    email: Faker::Internet.email,
-    address: Faker::Address.full_address(city: 'Paris'),
-    phone_number: Faker::PhoneNumber.phone_number(country: 'FR'),
-    skill: skill,
-    siret_number: Faker::Number.unique.number(digits: 14),
-    role: "artisan",
-    image: " "
+    skill: skill
   )
+
+  puts "Created artisan user with skill: #{skill}, email: #{user.email}"
 end
