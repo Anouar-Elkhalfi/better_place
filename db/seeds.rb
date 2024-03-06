@@ -1,14 +1,7 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+require 'faker'
 
 Work.delete_all
+User.where(role: 'artisan').delete_all
 
 Work.create!(
   name: "plafond",
@@ -45,6 +38,7 @@ Work.create!(
   image_url: "plancher.png"
 )
 
+
 Work.create!(
   name: "eau chaude sanitaire",
   description: "changer le chauffe-eau",
@@ -59,3 +53,30 @@ Work.create!(
   image_url: "ventilation.png"
 )
 
+# Définissez un hash associant les skills aux listes de noms d'entreprises
+skills_to_company_names = {
+  "plafond" => ["Artisanat du Plafond", "Isolation Experts", "Plafonds Innovants", "Plafond & Co", "Plafond Pro"],
+  "chauffage" => ["Chauffage Confort", "Énergie Thermique", "Pro Chauffage", "Chauffage Excellence", "Chauffage Solutions"],
+  "portes et fenêtres" => ["Fenêtres Excellence", "Portes & Fenêtres Pros", "Menuiserie Innovante", "Fenêtres et Plus", "Fenêtres Pro"],
+  "mûr" => ["Isolation Murale Pro", "Maçonnerie & Isolation", "Murs Isolants", "Isolation Murale Solutions", "Mur & Co"],
+  "plancher bas" => ["Plancher Bas Solutions", "Isolation Plancher Experts", "Pro Plancher", "Plancher Confort", "Isolation Sous-Plancher"],
+  "eau chaude sanitaire" => ["Chauffe-Eau Experts", "Eau Chaude Confort", "Sanitaire Pro", "Chauffe-Eau Solutions", "Eau Chaude Excellence"],
+  "ventilation" => ["Ventilation Performante", "Vents Innovateurs", "Pro Ventilation", "Ventilation Excellence", "Ventilation Solutions"]
+}
+
+# Seed for Artisans
+10.times do
+  skill = skills_to_company_names.keys.sample
+
+  custom_company_name = skills_to_company_names[skill].sample
+
+  User.create!(
+    company_name: custom_company_name,
+    email: Faker::Internet.email,
+    address: Faker::Address.full_address(city: 'Paris'),
+    phone_number: Faker::PhoneNumber.phone_number(country: 'FR'),
+    skill: skill,
+    siret_number: Faker::Number.unique.number(digits: 14),
+    image: " "
+  )
+end
