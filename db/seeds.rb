@@ -1,5 +1,6 @@
 require 'faker'
 
+ProjectWork.destroy_all
 Work.delete_all
 User.where(role: 'artisan').delete_all
 
