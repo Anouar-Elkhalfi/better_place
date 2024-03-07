@@ -17,7 +17,7 @@
               <th>Location</th>
               <th>Budget</th>
               <th>Start Date</th>
-              <th>Status</th>
+              <th>Requests</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -29,38 +29,20 @@
                 <td><%= project.location %></td>
                 <td><%= project.budget %></td>
                 <td><%= project.start_date %></td>
+                <td><%= project.project_requests.size %></td>
                 <td>
-                    <% project_request = ProjectRequest.find_by(project_id: project.id) %>
-                    <% if project_request.present? %>
-                      <% if project_request.status == 'en_cours' %>
-                        <button class="btn btn-outline-primary btn-sm">En Cours</button>
-                      <% elsif project_request.status == 'accepte' %>
-                        <button class="btn btn-outline-success btn-sm">Accepté</button>
-                      <% elsif project_request.status == 'rejete' %>
-                        <button class="btn btn-outline-secondary btn-sm">Rejeté</button>
-                      <% else %>
-                        <button class="btn btn-outline-secondary btn-sm">Statut Inconnu</button>
-                      <% end %>
-                    <% else %>
-                      <button class="btn btn-outline-secondary btn-sm">Statut Non Défini</button>
-                    <% end %>
-                     </td>
-                    <td>
-                      <%= link_to edit_project_path(project), class: 'btn btn-outline-secondary btn-sm rounded-circle' do %>
-                        <i class="fas fa-pencil-alt"></i> <!-- Icône de crayon -->
-                      <% end %>
-                      <%= link_to project_path(project), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-secondary btn-sm rounded-circle' do %>
-                        <i class="fas fa-trash-alt"></i> <!-- Icône de poubelle -->
-                      <% end %>
-                    </td>
-
+                  <%= link_to edit_project_path(project), class: 'btn btn-outline-secondary btn-sm rounded-circle' do %>
+                    <i class="fas fa-pencil-alt"></i> <!-- Icône de crayon -->
+                  <% end %>
+                  <%= link_to project_path(project), data: { confirm: 'Are you sure?', turbo_method: :delete }, class: 'btn btn-outline-secondary btn-sm rounded-circle' do %>
+                    <i class="fas fa-trash-alt"></i> <!-- Icône de poubelle -->
+                  <% end %>
+                </td>
               </tr>
             <% end %>
           </tbody>
-
         </table>
       </div>
-
     </div>
   </div>
 </div>

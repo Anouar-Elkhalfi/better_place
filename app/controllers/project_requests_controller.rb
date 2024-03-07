@@ -16,4 +16,7 @@ class ProjectRequestsController < ApplicationController
       redirect_to @project
     end
   end
+
+  def destroy
+  end
 end
