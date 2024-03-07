@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     member do
       get :artisans
     end
+
     resources :project_requests, only: [:create]
     resources :estimates, only: [:create]
   end
