@@ -6,7 +6,7 @@
       <div><%= artisan.address %></div>
       <div><%= artisan.phone_number %></div>
       <div><%= artisan.siret_number %></div>
-      <a href="#" class="btn-main">Envoyer mon projet</a>
+      <%= button_to "Envoyer mon projet",  project_project_requests_path(project), method: :post, class: "btn-main" %>
     </div>
   </div>
 </div>
