@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   def show
-    authorize @project
     @project = Project.find(params[:id])
+    authorize @project
   end
 
   def new
