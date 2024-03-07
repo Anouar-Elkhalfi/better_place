@@ -1,15 +1,93 @@
 <div class="banner1">
-  <div class="container1">
-    <h1 class="hometitle">La rénovation en toute simplicité</h1>
-    <p class="homesubtitle">Trouvez les experts parfaits pour vos travaux de rénovation énergétique.</p>
-    <a class="btn-main" href="<%= new_project_path %>">Commencez</a>
+  <div class="container-fluid banner-bg-img h-82">
+    <div class="container">
+      <h1 class="hometitle">La rénovation en toute simplicité</h1>
+      <p class="homesubtitle">Trouvez les experts pour mener à bien vos travaux de rénovation énergétique.</p>
+      <a class="btn-main" href="<%= new_project_path %>">Commencez</a>
+    </div>
   </div>
 </div>
 
-<section class="d-flex align-items-center justify-content-between main-container">
-  <%= image_tag "househome.png", width: 200 %>
 
-  <div>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptatum!
+<section class="d-flex align-items-center justify-content-between bg-white container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="position-relative me-3 p-5">
+          <%= image_tag "quote1.png", width: 36, class: "position-absolute start-0 top-0" %>
+          <div class="end-0 position-absolute start-0 top-50 -translate-y-50 d-flex justify-content-center align-items-center">
+            <%= image_tag "imagebanner2.png", width: 300 %>
+          </div>
+          <%= image_tag "quote2.png", width: 36, class: "bottom-0 end-0 position-absolute" %>
+          <p class="">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptatum!
+          </p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="position-relative mx-3 p-5">
+          <%= image_tag "quote1.png", width: 36, class: "position-absolute start-0 top-0" %>
+          <div class="end-0 position-absolute start-0 top-50 -translate-y-50 d-flex justify-content-center align-items-center">
+            <%= image_tag "imagebanner2.png", width: 300 %>
+          </div>
+          <%= image_tag "quote2.png", width: 36, class: "bottom-0 end-0 position-absolute" %>
+          <p class="">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptatum!
+          </p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="position-relative ms-3 p-5">
+          <%= image_tag "quote1.png", width: 36, class: "position-absolute start-0 top-0" %>
+          <div class="end-0 position-absolute start-0 top-50 -translate-y-50 d-flex justify-content-center align-items-center">
+            <%= image_tag "imagebanner2.png", width: 300 %>
+          </div>
+          <%= image_tag "quote2.png", width: 36, class: "bottom-0 end-0 position-absolute" %>
+          <p class="">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptatum!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="image-container">
+      <div class="overlay-text"></div>
+    </div>
+
+    <% if false %>
+      <%= image_tag "quote1.png", width: 200 %>
+      <%= image_tag "imagebanner22.png", width: 200 %>
+      <%= image_tag "quote2.png", width: 200 %>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptatum!
+      </div>
+
+      <%= image_tag "quote1.png", width: 200 %>
+      <%= image_tag "imagebanner2.png", width: 200 %>
+      <%= image_tag "quote2.png", width: 200 %>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptatum!
+      </div>
+    <% end %>
   </div>
+
+</section>
+
+<section class="d-flex align-items-center justify-content-between main-container">
+  <%= image_tag "househome.png", width: 400 %>
+  <div>
+    <h3 style="display: block;">Lorem ipsum dolor sit</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptatum!
+    </p>
+  </div>
+</section>
+
+<section class="d-flex align-items-center justify-content-between main-container bg-white">
+  <div>
+    <h3>Lorem ipsum dolor sit</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, voluptatum!
+    </p>
+  </div>
+  <%= image_tag "imagebanner4.png", width: 400 %>
 </section>

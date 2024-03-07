@@ -5,13 +5,21 @@
   background-position: center;
   background-color: white;
 }
-.container1{
+
+.banner-bg-img {
 background-image: asset-url("banner1.png");
-padding: 8px 74px;
-height: 93vh;
 background-repeat: no-repeat;
 background-position: bottom;
 }
+
+.h-82 {
+  height: 82vh;
+}
+
+.-translate-y-50 {
+  transform: translateY(-50%);
+}
+
 .hometitle{
   font-size: 45px;
   color: #453E4E;
@@ -23,21 +31,29 @@ background-position: bottom;
 .banner1 h1 {
   color: #453E4E;
   font-family: 'Noto Sans', sans-serif;
-  padding-top: 14px;
+  padding-top: 5px;
+  font-size: 30px;
 }
 .banner1 h3 {
   color: #453E4E;
 }
-// .banner1 a {
-//   display: inline-block;
-//   background-color: #FCA601;
-//   color: white;
-//   font-size: 18px;
-//   padding: 10px 20px;
-//   border-radius: 50px;
-//   text-decoration: none;
-// }
-.imgbanner1 img {
-  width: 100%;
-  display: block;
+section {
+  height: 66vh;
+}
+.image-container {
+  position: relative;
+  width: 300px;
+}
+.overlay-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: 453E4E;
+  font-size: 23px;
+  font-style: italic;
+  padding: 38px;
+}
+.btn-main:hover {
+  background-color: #e09200;
+  color: white;
 }
