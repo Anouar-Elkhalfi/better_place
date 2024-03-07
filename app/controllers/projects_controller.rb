@@ -14,7 +14,6 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.user = current_user
 
-    debugger
     if @project.save
       redirect_to artisans_project_path(@project)
     else
