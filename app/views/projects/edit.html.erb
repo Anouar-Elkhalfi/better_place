@@ -1,0 +1,14 @@
+<h1>Éditer le projet</h1>
+
+<%= form_for(@project) do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <!-- Ajoutez d'autres champs du formulaire ici selon vos besoins -->
+
+  <div class="actions">
+    <%= f.submit "Enregistrer" %>
+  </div>
+<% end %>
