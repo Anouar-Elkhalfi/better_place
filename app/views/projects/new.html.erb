@@ -1,32 +1,49 @@
 <!-- app/views/restaurants/_form.html.erb -->
-<div class="container pt-5 pb-5" data-controller='formtoggle'>
-  <div class="row">
-    <%= simple_form_for (@project), data: { controller: "datepicker"} do |f| %>
-      <div class="col" data-target='formtoggle.page1'>
-      <h3><%= f.label :work_ids, "Quels travaux souhaitez-vous réaliser en rapport avec votre DPE?" %></h3>
-        <div class="row">
-          <% Work.all.each do |work| %>
-            <div class="col-md-4 mb-3">
-              <div class="card">
-                <div class="card-body">
-                  <%= f.check_box :work_ids, { multiple: true, class: "d-none" }, work.id, nil %>
-                  <%= f.label "#{Work::EMOJIS[work.name]} #{work.name}", for: "project_work_ids_#{work.id}" %>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
-        <%= link_to "Suivant", "javascript:void(0);", data: { action: "formtoggle#nextPage" } %>
+<div class="full-height full-width-container pt-5 pb-5" data-controller='formtoggle'>
+  <h2>Nouveau projet</h2>
+    <div class="curved-container bg-white rounded shadow p-4">
+      <div class="progress">
+        <div data-formtoggle-target="progress" class="progress-bar bg-warning" role="progressbar" style="width: 33%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
 
-      <div class="col d-none" data-target='formtoggle.page2'>
-        <%= f.input :title %>
-        <%= f.input :description %>
-        <%= f.input :location %>
-        <%= f.input :budget %>
-        <%= f.input :start_date, label: 'Date de début pour votre projet', as: :string, input_html: { data: { datepicker_target: "startDate"} } %>
-        <%= f.submit %>
+      <div class="row">
+        <%= simple_form_for (@project), data: { controller: "datepicker"} do |f| %>
+          <div class="col" data-target='formtoggle.page1'>
+            <h3><%= f.label :work_ids, "Quels travaux souhaitez-vous réaliser en rapport avec votre DPE?" %></h3>
+            <div class="row">
+              <% Work.all.each do |work| %>
+                <div class="col-md-4 mb-3">
+                  <div class="card card-new">
+                    <div class="card-body">
+                      <%= f.check_box :work_ids, { multiple: true, class: "d-none" }, work.id, nil %>
+                      <%= f.label :work_ids, for: "project_work_ids_#{work.id}" do %>
+                        <div class="work">
+                          <%= image_tag image_for_work(work), width: 35, height: 35, class: "ldslkdssdk" %>
+                          <%= work.name %>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+            <div class="d-flex justify-content-end mt-3">
+            <%= link_to "javascript:void(0);", class: "btn-main", data: { action: "formtoggle#nextPage" } do %>
+              Suivant
+             <i class="fa-solid fa-arrow-right"></i>
+            <% end %>
+            </div>
+          </div>
+
+          <div class="col d-none" data-target='formtoggle.page2'>
+            <%= f.input :title %>
+            <%= f.input :description %>
+            <%= f.input :location %>
+            <%= f.input :budget %>
+            <%= f.input :start_date, label: 'Date de début pour votre projet', as: :string, input_html: { data: { datepicker_target: "startDate"} } %>
+            <%= f.submit class: "btn-secondary" %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
+    </div>
 </div>
