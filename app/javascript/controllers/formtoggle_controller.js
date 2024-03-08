@@ -8,8 +8,16 @@ export default class extends Controller {
     this.showPage(1);
   }
   showPage(page){
-    this.page1Target.style.display = page === 1 ? "block" : "none";
-    this.page2Target.style.display = page === 2 ? "block" : "none";
+    if (page === 1) {
+      this.page1Target.classList.remove('d-none')
+    } else {
+      this.page1Target.classList.add('d-none')
+    }
+    if (page === 2) {
+      this.page2Target.classList.remove('d-none')
+    } else {
+      this.page2Target.classList.add('d-none')
+    } 
   }
 
   nextPage(){

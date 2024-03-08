@@ -13,8 +13,6 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     @project.user = current_user
-
-    
     if @project.save
       redirect_to artisans_project_path(@project)
     else
@@ -28,6 +26,18 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     authorize @project
     @artisans = User.where(role: 'artisan', skill: @project.works.pluck(:name))
+  end
+  
+  def edit
+    @project = Project.find(params[:id])
+  end
+
+
+  def destroy
+    skip_authorization
+    @project = Project.find(params[:id])
+    @project.destroy
+    redirect_to dashboard_path
   end
 
   private

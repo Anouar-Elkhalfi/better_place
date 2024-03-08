@@ -1,19 +1,30 @@
 <!-- app/views/restaurants/_form.html.erb -->
-<div class="container mt-5 mb-5" data-controller='formtoggle'>
+<div class="container pt-5 pb-5" data-controller='formtoggle'>
   <div class="row">
     <%= simple_form_for (@project), data: { controller: "datepicker"} do |f| %>
       <div class="col" data-target='formtoggle.page1'>
+      <h3><%= f.label :work_ids, "Quels travaux souhaitez-vous réaliser en rapport avec votre DPE?" %></h3>
+        <div class="row">
+          <% Work.all.each do |work| %>
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <%= f.check_box :work_ids, { multiple: true, class: "d-none" }, work.id, nil %>
+                  <%= f.label "#{Work::EMOJIS[work.name]} #{work.name}", for: "project_work_ids_#{work.id}" %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <%= link_to "Suivant", "javascript:void(0);", data: { action: "formtoggle#nextPage" } %>
+      </div>
+
+      <div class="col d-none" data-target='formtoggle.page2'>
         <%= f.input :title %>
         <%= f.input :description %>
         <%= f.input :location %>
         <%= f.input :budget %>
         <%= f.input :start_date, label: 'Date de début pour votre projet', as: :string, input_html: { data: { datepicker_target: "startDate"} } %>
-        <%= link_to "Suivante", "javascript:void(0);", data: { action: "formtoggle#nextPage" } %>
-      </div>
-
-      <div class="col" data-target='formtoggle.page2'>
-        <%= f.label :work_ids, "Select Works" %>
-        <%= f.collection_check_boxes :work_ids, Work.all, :id, :name %>
         <%= f.submit %>
       </div>
     <% end %>
