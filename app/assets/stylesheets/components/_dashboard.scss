@@ -36,14 +36,12 @@ li {
   margin-right: 10px;
 }
 
-
-
-.card {
+.card-dashboard {
   border: none;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre douce */
-}
 
-.card-body {
-  padding: 20px;
+  .card-body {
+    padding: 20px;
+  }
 }
