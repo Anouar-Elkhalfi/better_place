@@ -1,0 +1,20 @@
+.card {
+  border: none !important;
+  .card-body {
+    width: 100%;
+    padding: 0;
+
+    label {
+      width: 100%;
+      padding: 1rem 2rem;
+      background: #FFFAF1;
+      border-radius: 30px;
+      flex-grow: 1;
+    }
+
+    input:checked + label {
+      background-color: #FFFAF1;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
