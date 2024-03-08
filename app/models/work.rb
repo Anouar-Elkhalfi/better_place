@@ -9,4 +9,5 @@ class Work < ApplicationRecord
     "eau chaude sanitaire" => "💧",
     "ventilation" => "💨",
   }
+
 end
