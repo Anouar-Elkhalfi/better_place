@@ -1,51 +1,51 @@
-<div class="container">
-  <div class="row">
-   <div class="col-md-3">
-  <ul class="custom-list">
-    <li><i class="fa-solid fa-house-chimney-window text-primary"></i> Mes projets en cours</li>
-    <li><i class="fa-solid fa-temperature-arrow-up text-success"></i> Mon historique de projet</li>
-    <li><i class="fa-solid fa-plug-circle-bolt text-warning"></i> Mon tableau de bord</li>
-  </ul>
-</div>
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'shared/sidebar' %>
+  </div>
+  <div class="col-md-9">
+    <div class="row">
 
 
-    <div class="col-md-9">
-  <div class="card">
-    <div class="card-body">
-      <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Description</th>
-              <th>Location</th>
-              <th>Budget</th>
-              <th>Start Date</th>
-              <th>Requests</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @projects.each do |project| %>
-              <tr>
-                <td><%= project.title %></td>
-                <td><%= project.description %></td>
-                <td><%= project.location %></td>
-                <td><%= project.budget %></td>
-                <td><%= project.start_date %></td>
-                <td><%= project.project_requests.size %></td>
-                <td>
-                  <%= link_to edit_project_path(project), class: 'btn btn-outline-secondary btn-sm rounded-circle' do %>
-                    <i class="fas fa-pencil-alt"></i> <!-- Icône de crayon -->
+      <div class="col-md-9">
+        <div class="card">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Location</th>
+                    <th>Budget</th>
+                    <th>Start Date</th>
+                    <th>Requests</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @projects.each do |project| %>
+                    <tr>
+                      <td><%= project.title %></td>
+                      <td><%= project.description %></td>
+                      <td><%= project.location %></td>
+                      <td><%= project.budget %></td>
+                      <td><%= project.start_date %></td>
+                      <td><%= project.project_requests.size %></td>
+                      <td>
+                        <%= link_to edit_project_path(project), class: 'btn btn-outline-secondary btn-sm rounded-circle' do %>
+                          <i class="fas fa-pencil-alt"></i> <!-- Icône de crayon -->
+                        <% end %>
+                        <%= link_to project_path(project), data: { confirm: 'Are you sure?', turbo_method: :delete }, class: 'btn btn-outline-secondary btn-sm rounded-circle' do %>
+                          <i class="fas fa-trash-alt"></i> <!-- Icône de poubelle -->
+                        <% end %>
+                      </td>
+                    </tr>
                   <% end %>
-                  <%= link_to project_path(project), data: { confirm: 'Are you sure?', turbo_method: :delete }, class: 'btn btn-outline-secondary btn-sm rounded-circle' do %>
-                    <i class="fas fa-trash-alt"></i> <!-- Icône de poubelle -->
-                  <% end %>
-                </td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
