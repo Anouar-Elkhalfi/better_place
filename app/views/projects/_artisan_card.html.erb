@@ -1,12 +1,13 @@
-<div class="card-trip d-flex flex-column">
-  <div class="card-trip-infos flex-column flex-grow-1">
-    <div>
-      <h1><%= artisan.company_name %></h1>
-      <p class="mb-3"><%= artisan.skill %></p>
-      <div><%= artisan.address %></div>
-      <div><%= artisan.phone_number %></div>
-      <div><%= artisan.siret_number %></div>
-      <%= button_to "Envoyer mon projet",  project_project_requests_path(project), method: :post, class: "btn-main" %>
+
+
+<div class="card">
+<img src="<%= artisan.image %>" class="card-img-top" style="widht:200px; height:150px;"alt="...">
+  <div class="card-body">
+    <h5 class="card-title" style="margin-top:10px"><%= artisan.company_name %></h5>
+    <h5 style="margin-top:5px"><%= artisan.first_name %> <%= artisan.last_name %></h5>
+    <p><%= artisan.address %></p>
+    <div class="button-container">
+      <%= button_to "Envoyer mon projet",  project_project_requests_path(project), method: :post, class: "custom-button" %>
     </div>
   </div>
 </div>
