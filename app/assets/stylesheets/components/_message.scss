@@ -1,0 +1,21 @@
+/* app/assets/stylesheets/components/_message.scss */
+
+.message-bubble {
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.sender-style {
+  background-color: #DCF8C6; /* Couleur de fond pour les messages envoyés */
+  align-self: flex-end; /* Pour aligner à droite */
+}
+
+.receiver-style {
+  background-color: #EAEAEA; /* Couleur de fond pour les messages reçus */
+}
+
+/* Effet 3D */
+.message-bubble {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}

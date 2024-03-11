@@ -9,11 +9,11 @@ class ProjectRequestsController < ApplicationController
 
     if @project_request.save
       # Handle successful creation
-      flash[:success] = 'Project request created successfully!'
-      redirect_to dashboard_path
+      flash[:notice] = 'Project request created successfully!'
+      redirect_to artisans_project_path(@project)
     else
       # Handle validation errors or other issues
-      flash[:error] = 'Failed to create project request.'
+      flash[:alert] = 'Failed to create project request.'
       puts "Errors: #{@project_request.errors.full_messages}"
       redirect_to @project
     end

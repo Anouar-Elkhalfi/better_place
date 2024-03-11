@@ -3,6 +3,8 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project_works = @project.works
     authorize @project
+
+    @message = Message.new
   end
 
   def new
@@ -41,9 +43,19 @@ class ProjectsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def index
+    @projects = Project.all
+    @markers = @projects.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
+  end
+
   private
 
   def project_params
-    params.require(:project).permit(:title, :description, :location, :budget, :start_date, work_ids: [])
+    params.require(:project).permit(:title, :body, :photo, :description, :location, :budget, :start_date, work_ids: [])
   end
 end
