@@ -5,6 +5,7 @@ class Project < ApplicationRecord
   has_many :project_requests
   has_one_attached :photo
   # has_many :reviews, through: :project_request
+  has_many :messages, dependent: :destroy
 
   validates :description, presence: true
   geocoded_by :location

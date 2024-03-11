@@ -47,7 +47,7 @@
                     <td style="width: 14%;"><%= project.project_requests.size %></td>
                     <td style="width: 14%;">
                       <div class="btn-group" role="group" aria-label="Actions">
-                        <%= link_to edit_project_path(project), class: 'btn btn-outline-secondary btn-sm btn-rounded', style: 'width: 50%;' do %>
+                        <%= link_to edit_project_path(project), class: 'btn btn-outline-secondary btn-sm rounded-circle', style: 'width: 50%;' do %>
                           <i class="fas fa-pencil-alt"></i> <!-- Icône de crayon -->
                         <% end %>
                         <%= link_to project_path(project), data: { confirm: 'Are you sure?', turbo_method: :delete }, class: 'btn btn-outline-secondary btn-sm btn-rounded', style: 'width: 50%;' do %>

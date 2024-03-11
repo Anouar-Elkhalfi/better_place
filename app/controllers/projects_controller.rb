@@ -1,7 +1,10 @@
 class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
+    @project_works = @project.works
     authorize @project
+
+    @message = Message.new
   end
 
   def new

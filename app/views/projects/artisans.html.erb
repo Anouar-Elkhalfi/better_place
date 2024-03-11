@@ -10,16 +10,29 @@
     <h2 style='color: black; text-align: center; margin:30px'>Veuillez selectionner des artisans pour votre projet</h2>
       <div class="cards" >
 
+
+    <div class="artisans-list col-12 col-lg-8 mb-lg-0">
+      <h2 style='color: black; text-align: center; margin:30px'>Veuillez sélectionner des artisans pour votre projet</h2>
+      <div class="cards">
         <% @artisans.each do |artisan| %>
           <%= render partial: 'artisan_card', locals: { artisan: artisan, project: @project } %>
         <% end %>
       </div>
     </div>
-    <div class="col-12 col-lg-4" style='background-color: white'>
-      <h1 style="margin:30px; color: black"><strong><%= @project.title %></strong></h1>
-      <p><%= @project.description %></p>
-      <p><%= @project.location %></p>
-      <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :fill %>
+
+    <div class="project-selection col-12 col-lg-4">
+      <div class="project-composition">
+        <h1 style="margin:30px; color: black"><strong><%= @project.title %></strong></h1>
+        <p><%= @project.description %></p>
+        <p><%= @project.location %></p>
+        <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :fill %>
+        <% @project.project_requests.each do |project_request| %>
+          <p><%= project_request.user.company_name %></p>
+        <% end %>
+      </div>
+      <div class="button-confirmation">
+        <%= link_to "Confirmez mon projet", project_path(@project), class: "btn-main" %>
+      </div>
     </div>
   </div>
 </div>

@@ -1,2 +1,28 @@
 <h1><%= @project.title %></h1>
 <%= cl_image_tag @project.photo, height: 300, width: 400, crop: :fill %>
+
+
+<!-- app/views/projects/show.html.erb -->
+<div class="container project"
+ data-controller="project-subscription"
+  data-project-subscription-project-id-value="<%= @project.id %>"
+>
+>
+  <h2>Chat</h2>
+  <div class="messages" data-project-subscription-target="messages">
+    <% @project.messages.each do |message| %>
+      <%= render "messages/message", message: message %>
+    <% end %>
+  </div>
+
+  <%= simple_form_for [@project, @message],
+      html: {class: "d-flex"} do |f|
+    %>
+      <%= f.input :content,
+        label: false,
+        placeholder: "Message",
+        wrapper_html: {class: "flex-grow-1"}
+      %>
+      <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+    <% end %>
+</div>

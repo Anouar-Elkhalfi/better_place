@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
     resources :project_requests, only: [:create]
     resources :estimates, only: [:create]
+    resources :messages, only: [:create]
   end
 
   resources :project_requests, only: [:destroy]
