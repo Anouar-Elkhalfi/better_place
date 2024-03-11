@@ -9,7 +9,8 @@
       <p><%= artisan.address %></p>
     </div>
     <div class="button-container">
-      <%= button_to "Envoyer mon projet", artisans_project_path(@project), method: :post, class: "btn-main" %>
+    <!-- artisan_id ajouter afin de bien enregistrer la project request avec artisan et non pas user id -->
+      <%= button_to "Envoyer mon projet",  project_project_requests_path(project, artisan_id: artisan.id), method: :post, class: "btn-main" %>
     </div>
   </div>
 </div>
