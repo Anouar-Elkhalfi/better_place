@@ -5,7 +5,7 @@
     </div>
 
     <div class="artisans-list col-12 col-lg-8 mb-lg-0">
-      <h2 style='color: black; text-align: center; margin:30px'>Veuillez sélectionner des artisans pour votre projet</h2>
+      <h2 style='text-align: center; margin:30px;'><strong>Veuillez sélectionner des artisans pour votre projet</strong></h2>
       <div class="cards">
         <% @artisans.each do |artisan| %>
           <%= render partial: 'artisan_card', locals: { artisan: artisan, project: @project } %>
@@ -14,13 +14,19 @@
     </div>
 
     <div class="project-selection col-12 col-lg-4">
+      <h2 style='text-align: left; margin:30px'><strong><%= @project.title %></strong></h1>
       <div class="project-composition">
-        <h1 style="margin:30px; color: black"><strong><%= @project.title %></strong></h1>
-        <p><%= @project.description %></p>
-        <p><%= @project.location %></p>
-        <% @project.project_requests.each do |project_request| %>
-          <p><%= project_request.user.company_name %></p>
-        <% end %>
+        <ul>
+          <li><%= @project.description %></li>
+          <li><%= @project.location %></li>
+        </ul>
+        <br>
+        <br>
+        <h5><strong><%= "Votre sélection des artisans :" %></strong></h5>
+          <% @project.project_requests.each do |project_request| %>
+            <li><strong><%= project_request.user.company_name %></strong></li>
+          <% end %>
+        </ul>
       </div>
 
       <div class="button-confirmation">
