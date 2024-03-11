@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
+    @project_works = @project.works
     authorize @project
   end
 
@@ -27,7 +28,7 @@ class ProjectsController < ApplicationController
     authorize @project
     @artisans = User.where(role: 'artisan', skill: @project.works.pluck(:name))
   end
-  
+
   def edit
     @project = Project.find(params[:id])
   end

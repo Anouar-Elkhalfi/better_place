@@ -1,8 +1,10 @@
 class ProjectRequestsController < ApplicationController
   def create
+
     @project = Project.find(params[:project_id])
       # Create a new Project_request associated with the current project
-      @project_request = @project.project_requests.new(status: "pending", user: current_user)
+      #ajoute params artisan afin d associer lartisans au project reques
+      @project_request = @project.project_requests.new(status: "pending", user: User.find(params[:artisan_id]))
       authorize @project_request
 
     if @project_request.save
