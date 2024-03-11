@@ -6,4 +6,5 @@ class Project < ApplicationRecord
   # has_many :reviews, through: :project_request
 
   validates :description, presence: true
+
 end
