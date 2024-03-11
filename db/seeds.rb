@@ -2,6 +2,7 @@ require 'faker'
 
 ProjectWork.destroy_all
 Work.delete_all
+ProjectRequest.destroy_all
 User.where(role: 'artisan').delete_all
 
 Work.create!(
@@ -61,11 +62,12 @@ Work.create!(
     image: "https://plus.unsplash.com/premium_photo-1683140667565-c6bca7b1a48d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     company_name: "Les Moulures Kevin !",
     first_name: "Ines",
-    last_name: "Reg"
+    last_name: "Reg",
     address: "10 Rue de la Paix, 75002 Paris",
     phone_number: "01 56 78 90 12",
     role: 'artisan',
     skill: "plafond",
+    benefit: "Maîtrise des techniques d'isolation phonique",
     email: "plafond1@test.com",
     password: 'azertyui',
   )
@@ -79,6 +81,7 @@ Work.create!(
     phone_number: "01 45 67 89 01",
     role: 'artisan',
     skill: "plafond",
+    benefit: "Réparation des fissures et des dommages",
     email: "plafond2@test.com",
     password: 'azertyui',
   )
@@ -92,6 +95,7 @@ Work.create!(
     phone_number: "01 34 56 78 90",
     role: 'artisan',
     skill: "chauffage",
+    benefit: "Utilisation de matériaux écologiques",
     email: "chauffage1@test.com",
     password: 'azertyui',
   )
@@ -105,6 +109,7 @@ Work.create!(
     phone_number: "01 23 45 67 89",
     role: 'artisan',
     skill: "chauffage",
+    benefit: "Respect strict des délais",
     email: "chauffage2@test.com",
     password: 'azertyui',
   )
@@ -118,6 +123,7 @@ Work.create!(
     phone_number: "01 67 89 01 23",
     role: 'artisan',
     skill: "portes et fenêtres",
+    benefit: "Collaboration avec des fournisseurs locaux",
     email: "portes1@test.com",
     password: 'azertyui',
   )
@@ -131,6 +137,7 @@ Work.create!(
     phone_number: "01 56 78 90 12",
     role: 'artisan',
     skill: "portes et fenêtres",
+    benefit: "5 ans suivi post-chantier",
     email: "portes2@test.com",
     password: 'azertyui',
   )
@@ -144,6 +151,7 @@ Work.create!(
     phone_number: "01 45 67 89 01",
     role: 'artisan',
     skill: "mur",
+    benefit: "Expertise en rénovation éco-responsable",
     email: "mur1@test.com",
     password: 'azertyui',
   )
@@ -157,6 +165,7 @@ Work.create!(
     phone_number: "01 34 56 78 90",
     role: 'artisan',
     skill: "mur",
+    benefit: "Maîtrise des normes de sécurité",
     email: "artisan@test.com",
     password: 'azertyui',
   )
@@ -170,6 +179,7 @@ Work.create!(
     phone_number: "01 23 45 67 89",
     role: 'artisan',
     skill: "plancher bas",
+    benefit: "Isolation thermique avancée",
     email: "plancher1@test.com",
     password: 'azertyui',
   )
@@ -183,6 +193,7 @@ Work.create!(
     phone_number: "01 67 89 01 23",
     role: 'artisan',
     skill: "plancher bas",
+    benefit: "Expertise en restauration de planchers anciens",
     email: "plancher2@test.com",
     password: 'azertyui',
   )
@@ -196,6 +207,7 @@ Work.create!(
     phone_number: "01 56 78 90 12",
     role: 'artisan',
     skill: "eau chaude sanitaire",
+    benefit: "Intégration de pompes à chaleur",
     email: "eau1@test.com",
     password: 'azertyui',
   )
@@ -209,6 +221,7 @@ Work.create!(
     phone_number: "01 45 67 89 01",
     role: 'artisan',
     skill: "eau chaude sanitaire",
+    benefit: "Systèmes de récupération de chaleur",
     email: "eau2@test.com",
     password: 'azertyui',
   )
@@ -222,6 +235,7 @@ Work.create!(
     phone_number: "01 34 56 78 90",
     role: 'artisan',
     skill: "ventilation",
+    benefit: "Installation de VMC double flux",
     email: "ventilation1@test.com",
     password: 'azertyui',
   )
@@ -235,6 +249,7 @@ Work.create!(
     phone_number: "01 23 45 67 89",
     role: 'artisan',
     skill: "ventilation",
+    benefit: "Connaissance approfondie des filtres HEPA",
     email: "ventilation2@test.com",
     password: 'azertyui',
   )
