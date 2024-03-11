@@ -18,11 +18,11 @@
         <h1 style="margin:30px; color: black"><strong><%= @project.title %></strong></h1>
         <p><%= @project.description %></p>
         <p><%= @project.location %></p>
+        <% @project.project_requests.each do |project_request| %>
+          <p><%= project_request.user.company_name %></p>
+        <% end %>
       </div>
 
-      <%# <div class="project-items">
-      </div> %>
-      
       <div class="button-confirmation">
         <%= link_to "Confirmez mon projet", project_path(@project), class: "btn-main" %>
       </div>
