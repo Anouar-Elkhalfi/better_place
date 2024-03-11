@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="formtoggle"
 export default class extends Controller {
-  static targets = ["page1", "page2", "form", "progress"];
+  static targets = ["page1", "page2", "form", "progress", "count"];
 
   connect() {
     this.showPage(1);
@@ -18,6 +18,7 @@ export default class extends Controller {
     if (page === 2) {
       this.progressTarget.style.width = '66%'
       this.page2Target.classList.remove('d-none')
+      this.countTarget.innerText = "2/3"
     } else {
       this.page2Target.classList.add('d-none')
     }

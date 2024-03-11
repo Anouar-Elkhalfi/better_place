@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 16px;
-  margin-bottom: 15px;
+  margin-bottom: 90px;
 }
 
 .custom-button {
@@ -15,19 +15,67 @@
   cursor: pointer;
 }
 
-.card{
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+.card-img-top {
+  width:100%;
+  height:150px;
+  object-fit: cover;
 }
 
+.card{
+  display: flex;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.card-title {
+  margin-top:30px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #E0B3B5;
+}
+
+h5 {
+  color: gray;
+}
 .card-body {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
-  margin-left: 5px
+  margin-left: 5px;
+  justify-content: space-between;
 }
 
 .button-container {
-  margin-top: auto; /* Adjust the margin as needed */
-  text-align: center; /* Center the button within the container */
-  margin-bottom: 10px
+  margin-top: auto;
+  text-align: center;
+  margin-bottom: 10px;
+  // flex-direction: column;
+}
+
+.artisans-list {
+  background-color: white;
+  padding: 0 40px;
+  border-radius: 40px;
+}
+
+.project-selection {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 40px;
+  margin-left: 20px;
+  border-radius: 40px;
+}
+
+.project-composition {
+  margin: 20px;
+  padding-left: 20px;
+  border-left: 2px solid #FCA601;
+}
+
+.button-confirmation {
+  margin: 20px;
 }

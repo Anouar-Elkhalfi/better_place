@@ -1,8 +1,12 @@
 .card {
   border: none !important;
+  img {
+    border-radius: 12px 12px 0 0;
+  }
   .card-body {
     width: 100%;
     padding: 0;
+
 
     label {
       width: 100%;

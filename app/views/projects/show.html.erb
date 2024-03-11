@@ -1,3 +1,4 @@
+
 <div class='container'>
     <div class="row justify-content-around mt-5">
       <div class="col-6" style='background-color:grey'>
@@ -6,6 +7,7 @@
         <p>Localisation du chantier : <%= @project.location %></p>
         <p>Budget idéal : <%= @project.budget %> €</p>
         <p>Date dé début de travaux souhaité : <%= Date.parse(@project.start_date).strftime("%d %B %Y") %></p>
+        <%= cl_image_tag @project.photo, height: 300, width: 400, crop: :fill %>
         <div>
          <% @project_works.each do |project_work| %>
             <p> <strong><%= project_work.name %></strong></p>
@@ -22,8 +24,21 @@
           <% end %>
         </div>
       </div>
-      <div class="col-4" style='background-color:yellow'>
-        One of two columns
+      <div class="col-4" style='background-color:yellow'data-controller="project-subscription"
+  data-project-subscription-project-id-value="<%= @project.id %>">
+        <h2>Chat</h2>
+        <div class="messages" data-project-subscription-target="messages">
+          <% @project.messages.each do |message| %>
+            <%= render "messages/message", message: message %>
+          <% end %>
+        </div>
+        <%= simple_form_for [@project, @message], html: {class: "d-flex"} do |f|%>
+        <%= f.input :content,
+        label: false,
+        placeholder: "Message",
+        wrapper_html: {class: "flex-grow-1"}%>
+        <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+        <% end %>
       </div>
     </div>
 </div>

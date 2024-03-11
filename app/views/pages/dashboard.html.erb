@@ -1,99 +1,69 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-3 ">
-      <nav>
-        <div class="logo">
-          <a href="#" class="logo">
-            <i class="fa-solid fa-gauge"></i>
-            <span class="nav-item">Dashboard</span>
-          </a>
-        </div>
-        <div class="nav-links">
-          <div class="nav-link">
-            <a href="#">
-              <i class="fas fa-home"></i>
-              <span class="nav-item">Home</span>
+ <div class="container dashboard-page"> <!-- Ajout de la classe dashboard-page -->
+    <div class="row">
+      <div class="col-md-3">
+        <nav>
+          <div class="logo">
+            <a href="#" class="logo">
+              <i class="fa-solid fa-gauge"></i>
+              <span class="nav-item">Dashboard</span>
             </a>
           </div>
-          <div class="nav-link">
-            <a href="#">
-              <i class="fas fa-user"></i>
-              <span class="nav-item">Profile</span>
-            </a>
+          <div class="nav-links">
+            <div class="nav-link">
+              <a href="#">
+                <i class="fas fa-home"></i>
+                <span class="nav-item">Home</span>
+              </a>
+            </div>
+            <!-- Autres liens de navigation -->
           </div>
-          <div class="nav-link">
-            <a href="#">
-              <i class="fas fa-wallet"></i>
-              <span class="nav-item">Wallet</span>
-            </a>
-          </div>
-          <div class="nav-link">
-            <a href="#">
-              <i class="fas fa-chart-bar"></i>
-              <span class="nav-item">Analytics</span>
-            </a>
-          </div>
-          <div class="nav-link">
-            <a href="#">
-              <i class="fas fa-tasks"></i>
-              <span class="nav-item">Tasks</span>
-            </a>
-          </div>
+        </nav>
+      </div>
+      <div class="col-md-9">
+        <div class="card">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <h2 style="margin-bottom: 80px;"> Mes Projets </h2>
+                  <tr>
+                    <th>Titre</th>
+                    <th>descriptio</th>
+                    <th>Localisation</th>
+                    <th>Budget</th>
+                    <th>Début</th>
+                    <th>Demandes</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @projects.each do |project| %>
+                  <tr>
+                    <td style="width: 14%;"><%= project.title %></td>
+                    <td style="width: 14%;"><%= project.description %></td>
+                    <td style="width: 14%;"><%= project.location %></td>
+                    <td style="width: 14%;"><%= project.budget %></td>
+                    <td style="width: 14%;"><%= project.start_date %></td>
+                    <td style="width: 14%;"><%= project.project_requests.size %></td>
+                    <td style="width: 14%;">
+                      <div class="btn-group" role="group" aria-label="Actions">
+                        <%= link_to edit_project_path(project), class: 'btn btn-outline-secondary btn-sm rounded-circle', style: 'width: 50%;' do %>
+                          <i class="fas fa-pencil-alt"></i> <!-- Icône de crayon -->
+                        <% end %>
+                        <%= link_to project_path(project), data: { confirm: 'Are you sure?', turbo_method: :delete }, class: 'btn btn-outline-secondary btn-sm btn-rounded', style: 'width: 50%;' do %>
+                          <i class="fas fa-trash-alt"></i> <!-- Icône de poubelle -->
+                        <% end %>
+                      </div>
 
-          <div class="nav-link logout">
-            <a href="#" class="logout">
-              <i class="fas fa-sign-out-alt"></i>
-              <span class="nav-item">Log out</span>
-            </a>
-          </div>
-        </div>
-      </nav>
-    </div>
 
-    <div class="col-md-9">
-      <div class="card">
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table">
-              <thead>
-                <h2 style="margin-bottom: 80px;"> Mes Projets </h2>
-                <tr>
-                  <th>Titre</th>
-                  <th>descriptio</th>
-                  <th>Localisation</th>
-                  <th>Budget</th>
-                  <th>Début</th>
-                  <th>Demandes</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% @projects.each do |project| %>
-                <tr>
-                  <td style="width: 14%;"><%= project.title %></td>
-                  <td style="width: 14%;"><%= project.description %></td>
-                  <td style="width: 14%;"><%= project.location %></td>
-                  <td style="width: 14%;"><%= project.budget %></td>
-                  <td style="width: 14%;"><%= project.start_date %></td>
-                  <td style="width: 14%;"><%= project.project_requests.size %></td>
-                  <td style="width: 14%;">
-                    <div class="btn-group" role="group" aria-label="Actions">
-                      <%= link_to edit_project_path(project), class: 'btn btn-outline-secondary btn-sm rounded-pill', style: 'width: 50%;' do %>
-                        <i class="fas fa-pencil-alt"></i> <!-- Icône de crayon -->
-                      <% end %>
-                      <%= link_to project_path(project), data: { confirm: 'Are you sure?', turbo_method: :delete }, class: 'btn btn-outline-secondary btn-sm rounded-pill', style: 'width: 50%;' do %>
-                        <i class="fas fa-trash-alt"></i> <!-- Icône de poubelle -->
-                      <% end %>
-                    </div>
-                  </td>
-                </tr>
-                <% end %>
-              </tbody>
-            </table>
+                    </td>
+                  </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
