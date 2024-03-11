@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 16px;
-  margin-bottom: 15px;
+  margin-bottom: 90px;
 }
 
 .custom-button {
@@ -15,10 +15,25 @@
   cursor: pointer;
 }
 
+.card-img-top {
+  width:100%;
+  height:150px;
+  object-fit: cover;
+}
+
 .card{
   display: flex;
   height: 100%;
   border-radius: 12px;
+}
+
+.card-title {
+  margin-top:30px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #E0B3B5;
 }
 
 h5 {
@@ -41,19 +56,24 @@ h5 {
 
 .artisans-list {
   background-color: white;
-  padding-right: 40px;
+  padding: 0 40px;
+  border-radius: 40px;
 }
 
 .project-selection {
   background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding-left: 40px;
+  margin-left: 20px;
+  border-radius: 40px;
 }
 
 .project-composition {
   margin: 20px;
+  padding-left: 20px;
+  border-left: 2px solid #FCA601;
 }
 
 .button-confirmation {

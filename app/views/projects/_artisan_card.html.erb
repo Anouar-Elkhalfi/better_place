@@ -1,16 +1,16 @@
-
-
 <div class="card">
-  <img src="<%= artisan.image %>" class="card-img-top" style="widht:200px; height:150px;"alt="...">
+  <img src="<%= artisan.image %>" class="card-img-top">
   <div class="card-body">
     <div class="card-text">
-      <h3 class="card-title" style="margin-top:10px"><%= artisan.company_name %></h5>
-      <h5 style="margin-top:5px"><%= artisan.first_name %> <%= artisan.last_name %></h5>
+      <h3 class="card-title"><%= artisan.company_name %></h3>
+      <h5><%= artisan.first_name %> <%= artisan.last_name %></h5>
+      <h6><%= "Expertise : #{artisan.skill}" %></h6>
+      <br>
       <p><%= artisan.address %></p>
     </div>
     <div class="button-container">
-    <!-- artisan_id ajouter afin de bien enregistrer la project request avec artisan et non pas user id -->
-      <%= button_to "Envoyer mon projet",  project_project_requests_path(project, artisan_id: artisan.id), method: :post, class: "btn-main" %>
+      <p><i class="fa-solid fa-heart" style="color: red; margin-right: 5px;"></i><%= artisan.benefit %></p>
+      <%= button_to "Envoyer mon projet", project_project_requests_path(project, artisan_id: artisan.id), method: :post, class: "btn-main" %>
     </div>
   </div>
 </div>
