@@ -1,8 +1,15 @@
+
 <div class='container-fluid custom-container'>
-  <div class="d-flex flex-lg-row flex-column" style="margin-top: 30px;">
-    <div class="progress" style="margin-bottom:10px">
-      <div data-formtoggle-target="progress" class="progress-bar bg-warning" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
+  <div class="row justify-content-center" style="margin-top: 30px;">
+  <h3>3/3</h3>
+  <div class="progress bg-warning" style="margin-bottom:10px">
+    <div data-formtoggle-target="progress" class="progress-bar bg-warning" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+
+  </div>
+    <div class="col-12 col-lg-8 mb-lg-0" style='background-color: white; padding-right: 5px'>
+    <h2 style='color: black; text-align: center; margin:30px'>Veuillez selectionner des artisans pour votre projet</h2>
+      <div class="cards" >
+
 
     <div class="artisans-list col-12 col-lg-8 mb-lg-0">
       <h2 style='color: black; text-align: center; margin:30px'>Veuillez sélectionner des artisans pour votre projet</h2>
@@ -18,11 +25,11 @@
         <h1 style="margin:30px; color: black"><strong><%= @project.title %></strong></h1>
         <p><%= @project.description %></p>
         <p><%= @project.location %></p>
+        <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :fill %>
         <% @project.project_requests.each do |project_request| %>
           <p><%= project_request.user.company_name %></p>
         <% end %>
       </div>
-
       <div class="button-confirmation">
         <%= link_to "Confirmez mon projet", project_path(@project), class: "btn-main" %>
       </div>

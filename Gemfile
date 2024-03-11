@@ -52,6 +52,10 @@ gem "devise"
 gem "sassc-rails"
 gem "pundit"
 gem 'faker'
+gem "cloudinary"
+gem "geocoder"
+
+
 
 
 group :development, :test do
