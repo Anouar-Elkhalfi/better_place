@@ -1,27 +1,28 @@
-<div class='container'>
-    <div class="row justify-content-around mt-5">
-      <div class="col-6" style='background-color:grey'>
-        <h1><%= @project.title %></h1>
-        <p><%= @project.description %></p>
-        <p><%= @project.location %></p>
-        <p><%= @project.budget %></p>
-        <p><%= @project.start_date %></p>
-        <div>
-          <p><%= @project.project_requests.size %></p>
-              <% @project.project_requests.each do |pr| %>
-                <% selected_user = User.find(pr.user_id) %>
-                <p>Project reques ID:<%= pr.id %></p>
-                <p>Selected User: <%= selected_user.inspect %></p>
-                <p>Company Name: <%= selected_user.company_name if selected_user %></p>
-              <% end %>
-          <% @project_works.each do |project_work| %>
-            <p><%= project_work.name %></p>
+<h1><%= @project.title %></h1>
+<%= cl_image_tag @project.photo, height: 300, width: 400, crop: :fill %>
 
-          <% end %>
-        </div>
-      </div>
-      <div class="col-4" style='background-color:yellow'>
-        One of two columns
-      </div>
-    </div>
+
+<!-- app/views/projects/show.html.erb -->
+<div class="container project"
+ data-controller="project-subscription"
+  data-project-subscription-project-id-value="<%= @project.id %>"
+>
+>
+  <h2>Chat</h2>
+  <div class="messages" data-project-subscription-target="messages">
+    <% @project.messages.each do |message| %>
+      <%= render "messages/message", message: message %>
+    <% end %>
+  </div>
+
+  <%= simple_form_for [@project, @message],
+      html: {class: "d-flex"} do |f|
+    %>
+      <%= f.input :content,
+        label: false,
+        placeholder: "Message",
+        wrapper_html: {class: "flex-grow-1"}
+      %>
+      <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+    <% end %>
 </div>
