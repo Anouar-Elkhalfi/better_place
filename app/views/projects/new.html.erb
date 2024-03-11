@@ -7,10 +7,10 @@
         <div data-formtoggle-target="progress" class="progress-bar bg-warning" role="progressbar" style="width: 33%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
 
-      <div class="row">
+      <div class="row mt-4">
         <%= simple_form_for (@project), data: { controller: "datepicker"} do |f| %>
           <div class="col" data-target='formtoggle.page1'>
-            <h3><%= f.label :work_ids, "Quels travaux souhaitez-vous réaliser en rapport avec votre DPE?" %></h3>
+            <h3 class="pb-4"><%= f.label :work_ids, "Quels travaux souhaitez-vous réaliser en rapport avec votre DPE?" %></h3>
             <div class="row">
               <% Work.all.each do |work| %>
                 <div class="col-md-4 mb-3">
@@ -36,13 +36,18 @@
             </div>
           </div>
           <div class="col d-none" data-target='formtoggle.page2'>
+            <h3> <span class="number-round">1</span> Description de votre projet</h3>
             <%= f.input :title, label: 'Titre' %>
             <%= f.input :description %>
-            <%= f.input :location, label: 'Adresse' %>
+            <h3> <span class="number-round">2</span> Vos besoins</h3>
             <%= f.input :surface %>
-            <%= f.input :nombre_de_pieces %>
+            <%= f.input :nombre_de_pieces, label: "Nombre de pièces" %>
             <%= f.input :budget %>
-            <%= f.input :start_date, label: 'Date de début pour votre projet', as: :string, input_html: { data: { datepicker_target: "startDate"} } %>
+            <%= f.input :start_date, label: 'Date de début de votre projet', as: :string, input_html: { data: { datepicker_target: "startDate"} } %>
+            <%= f.input :photo, as: :file %>
+            <h3> <span class="number-round">3</span> Votre lieu d'intervention</h3>
+            <%= f.input :location, label: 'Adresse', input_html: {data: {location_autocomplete_target: "Adresse"}},
+            wrapper_html: {data: {controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
             <%= f.submit "Créer mon projet", class: "btn-main" %>
           </div>
         <% end %>

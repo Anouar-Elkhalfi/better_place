@@ -27,7 +27,7 @@ class ProjectsController < ApplicationController
     authorize @project
     @artisans = User.where(role: 'artisan', skill: @project.works.pluck(:name))
   end
-  
+
   def edit
     @project = Project.find(params[:id])
   end
@@ -40,9 +40,19 @@ class ProjectsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def index
+    @projects = Project.all
+    @markers = @projects.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
+  end
+
   private
 
   def project_params
-    params.require(:project).permit(:title, :description, :location, :budget, :start_date, work_ids: [])
+    params.require(:project).permit(:title, :body, :photo, :description, :location, :budget, :start_date, work_ids: [])
   end
 end

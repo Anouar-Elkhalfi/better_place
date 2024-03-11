@@ -19,6 +19,7 @@
       <h1 style="margin:30px; color: black"><strong><%= @project.title %></strong></h1>
       <p><%= @project.description %></p>
       <p><%= @project.location %></p>
+      <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :fill %>
     </div>
   </div>
 </div>
