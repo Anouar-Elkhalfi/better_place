@@ -1,45 +1,63 @@
-<div class="row">
-  <div class="col-md-3">
-    <%= render 'shared/sidebar' %>
-  </div>
-  <div class="col-md-9">
+ <div class="container dashboard-page"> <!-- Ajout de la classe dashboard-page -->
     <div class="row">
-
-
+      <div class="col-md-3">
+        <nav>
+          <div class="logo">
+            <a href="#" class="logo">
+              <i class="fa-solid fa-gauge"></i>
+              <span class="nav-item">Dashboard</span>
+            </a>
+          </div>
+          <div class="nav-links">
+            <div class="nav-link">
+              <a href="#">
+                <i class="fas fa-home"></i>
+                <span class="nav-item">Home</span>
+              </a>
+            </div>
+            <!-- Autres liens de navigation -->
+          </div>
+        </nav>
+      </div>
       <div class="col-md-9">
         <div class="card">
           <div class="card-body">
             <div class="table-responsive">
               <table class="table">
                 <thead>
+                  <h2 style="margin-bottom: 80px;"> Mes Projets </h2>
                   <tr>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Location</th>
+                    <th>Titre</th>
+                    <th>descriptio</th>
+                    <th>Localisation</th>
                     <th>Budget</th>
-                    <th>Start Date</th>
-                    <th>Requests</th>
+                    <th>Début</th>
+                    <th>Demandes</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <% @projects.each do |project| %>
-                    <tr>
-                      <td><%= project.title %></td>
-                      <td><%= project.description %></td>
-                      <td><%= project.location %></td>
-                      <td><%= project.budget %></td>
-                      <td><%= project.start_date %></td>
-                      <td><%= project.project_requests.size %></td>
-                      <td>
-                        <%= link_to edit_project_path(project), class: 'btn btn-outline-secondary btn-sm rounded-circle' do %>
+                  <tr>
+                    <td style="width: 14%;"><%= project.title %></td>
+                    <td style="width: 14%;"><%= project.description %></td>
+                    <td style="width: 14%;"><%= project.location %></td>
+                    <td style="width: 14%;"><%= project.budget %></td>
+                    <td style="width: 14%;"><%= project.start_date %></td>
+                    <td style="width: 14%;"><%= project.project_requests.size %></td>
+                    <td style="width: 14%;">
+                      <div class="btn-group" role="group" aria-label="Actions">
+                        <%= link_to edit_project_path(project), class: 'btn btn-outline-secondary btn-sm btn-rounded', style: 'width: 50%;' do %>
                           <i class="fas fa-pencil-alt"></i> <!-- Icône de crayon -->
                         <% end %>
-                        <%= link_to project_path(project), data: { confirm: 'Are you sure?', turbo_method: :delete }, class: 'btn btn-outline-secondary btn-sm rounded-circle' do %>
+                        <%= link_to project_path(project), data: { confirm: 'Are you sure?', turbo_method: :delete }, class: 'btn btn-outline-secondary btn-sm btn-rounded', style: 'width: 50%;' do %>
                           <i class="fas fa-trash-alt"></i> <!-- Icône de poubelle -->
                         <% end %>
-                      </td>
-                    </tr>
+                      </div>
+
+
+                    </td>
+                  </tr>
                   <% end %>
                 </tbody>
               </table>
@@ -49,4 +67,3 @@
       </div>
     </div>
   </div>
-</div>
