@@ -27,7 +27,7 @@ class ProjectsController < ApplicationController
     authorize @project
     @artisans = User.where(role: 'artisan', skill: @project.works.pluck(:name))
   end
-  
+
   def edit
     @project = Project.find(params[:id])
   end
