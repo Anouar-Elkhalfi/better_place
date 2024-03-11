@@ -9,6 +9,7 @@ class ProjectRequestsController < ApplicationController
 
     if @project_request.save
       # Handle successful creation
+
       flash[:notice] = 'Project request created successfully!'
       redirect_to artisans_project_path(@project)
     else
