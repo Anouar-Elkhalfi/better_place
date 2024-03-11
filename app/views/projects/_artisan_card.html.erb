@@ -7,7 +7,8 @@
     <h5 style="margin-top:5px"><%= artisan.first_name %> <%= artisan.last_name %></h5>
     <p><%= artisan.address %></p>
     <div class="button-container">
-      <%= button_to "Envoyer mon projet",  project_project_requests_path(project), method: :post, class: "btn-main" %>
+    <!-- artisan_id ajouter afin de bien enregistrer la project request avec artisan et non pas user id -->
+      <%= button_to "Envoyer mon projet",  project_project_requests_path(project, artisan_id: artisan.id), method: :post, class: "btn-main" %>
     </div>
   </div>
 </div>
