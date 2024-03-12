@@ -1,0 +1,24 @@
+<div class="modal fade" id="ArtisanModal-<%= artisan.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-3 text-center" id="exampleModalLabel"><%= artisan.company_name %></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="<%= artisan.image %>" class="img-modal">
+        <h4 class="artisan-name"><%= artisan.first_name %> <%= artisan.last_name %></h5>
+        <h5><%= "Expertise : #{artisan.skill}" %></h6>
+        <p><%= artisan.address %></p>
+        <h6><i class="fa-solid fa-heart" style="color: red; margin-right: 5px;"></i><%= artisan.benefit %></h6>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <%= button_to "Envoyer mon projet", project_project_requests_path(project, artisan_id: artisan.id), method: :post, class: "btn-modal btn-main" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+        <%# <button type="button" class="btn btn-main">Envoyer mon projet</button> %>

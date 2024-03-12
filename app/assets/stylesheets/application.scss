@@ -16,11 +16,17 @@
 @import "components/show_project";
 @import "components/cards";
 @import "components/sidebar";
+@import "components/modal_artisan";
 
 .main-container {
   background-color: #ffeac4;
   padding: 150px 150px
 }
+
+body {
+  background-color: #ffeac4;
+}
+
 
 .full-height {
   min-height: calc(100vh - 122px);

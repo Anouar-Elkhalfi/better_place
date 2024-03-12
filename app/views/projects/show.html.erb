@@ -7,11 +7,13 @@
         <p>Localisation du chantier : <%= @project.location %></p>
         <p>Budget idéal : <%= @project.budget %> €</p>
         <p>Date dé début de travaux souhaité : <%= Date.parse(@project.start_date).strftime("%d %B %Y") %></p>
+
         <% if @project.photo.attached? %>
           <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :fill %>
         <% else %>
           <%= image_tag "travaux.png", height: 300, width: 400 %>
         <% end %>
+
         <div>
          <% @project_works.each do |project_work| %>
             <p> <strong><%= project_work.name %></strong></p>
