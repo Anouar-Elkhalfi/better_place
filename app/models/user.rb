@@ -6,5 +6,7 @@ class User < ApplicationRecord
   has_many :projects
   has_many :estimates
   has_many :reviews
+  has_many :messages, dependent: :destroy
   has_many :project_requests, through: :estimate
+  has_one_attached :photo
 end
