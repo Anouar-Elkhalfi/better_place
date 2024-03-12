@@ -1,11 +1,16 @@
-
 <div class='container-fluid custom-container'>
+
   <div class="row justify-content-center mb-5">
-    <div><h3 class="count-progression text-center">3/3</h3></div>
+    <div>
+      <h3 class="count-progression text-center">3/3</h3>
+    </div>
     <div class="barre-progression progress bg-warning">
-      <div data-formtoggle-target="progress" class="progress-bar bg-warning" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      <div data-formtoggle-target="progress" class="progress-bar bg-warning" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+      </div>
     </div>
   </div>
+
+  <div class="row justify-content-center mb-5">
 
     <div class="artisans-list col-12 col-lg-6">
       <h2 style='text-align: center; margin:30px;'><strong>Veuillez sélectionner des artisans pour votre projet</strong></h2>
@@ -15,26 +20,29 @@
         <% end %>
       </div>
     </div>
+
     <div class="project-selection col-12 col-lg-4">
-      <h2 style='text-align: left; margin:30px'><strong><%= @project.title %></strong></h1>
-          <%= cl_image_tag @project.photo.key, height: 200, width: 300, crop: :fill, class: "image-user" %>
+      <h2 style='text-align: left; margin:30px'><strong><%= @project.title %></strong></h2>
+      <% if @project.photo.attached? %>
+        <%= cl_image_tag @project.photo.key, height: 200, width: 300, crop: :fill, class: "image-user"%>
+      <% else %>
+        <%= image_tag "travaux.png", height: 200, width: 300, class: "image-user" %>
+      <% end %>
       <div class="project-composition">
         <ul>
-          <li><%= @project.description %></li>
-          <li><%= @project.location %></li>
-          
-          <% if @project.photo.attached? %>
-            <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :fill %>
-          <% else %>
-            <%= image_tag "travaux.png", height: 300, width: 400 %>
-          <% end %>
-          
+          <li class="project-list"><span class="fw-bold">Description de votre projet :</span> <%= @project.description %></li>
+          <li class="project-list"><span class="fw-bold">Adresse :</span> <%= @project.location %></li>
+          <li class="project-list"><span class="fw-bold">Surface de votre bien :</span> <%= @project.surface %></li>
+          <li class="project-list"><span class="fw-bold">Nombre de pièce :</span> <%= @project.nombre_de_pieces %></li>
+          <li class="project-list"><span class="fw-bold">Budget de vos travaux :</span> <%= @project.budget %></li>
+          <li class="project-list"><span class="fw-bold">Date de début souhaité :</span> <%= @project.start_date %></li>
         </ul>
         <br>
         <br>
         <h5><strong><%= "Votre sélection des artisans :" %></strong></h5>
+        <ul>
           <% @project.project_requests.each do |project_request| %>
-            <li><strong><%= project_request.user.company_name %></strong></li>
+            <li><%= project_request.user.company_name %></li>
           <% end %>
         </ul>
       </div>
@@ -42,9 +50,11 @@
         <%= link_to "Confirmez mon projet", project_path(@project), class: "btn-main" %>
       </div>
     </div>
+
   </div>
+
 </div>
 
 <% @artisans.each do |artisan| %>
-  <%= render partial: 'modal_artisan', locals: { artisan: artisan, project: @project } %>
+ <%= render partial: 'modal_artisan', locals: { artisan: artisan, project: @project } %>
 <% end %>

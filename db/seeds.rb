@@ -114,7 +114,7 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   user = User.create!(
     image: "https://images.unsplash.com/photo-1615238168944-6ed817aeb4ae?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNoYXVmZmFnZXxlbnwwfHwwfHx8MA%3D%3D",
-    company_name: "Hmmm ! Mon Chou-fage !",
+    company_name: "Mon Chou-fage !",
     first_name: "Antoine",
     last_name: "Lefèvre",
     address: "14 Quai de la Tournelle, 75005 Paris",
@@ -211,6 +211,9 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
     password: 'azertyui',
   )
 
+  file = URI.open("https://kitt.lewagon.com/placeholder/users/opheliske")
+  user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
+
   user = User.create!(
     image: "https://plus.unsplash.com/premium_photo-1682148119915-169e1332362a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGxhbmNoZXIlMjBjaGFudGllcnxlbnwwfHwwfHx8MA%3D%3D",
     company_name: "Look the plancher !",
@@ -224,6 +227,9 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
     email: "plancher2@test.com",
     password: 'azertyui',
   )
+
+  file = URI.open("https://kitt.lewagon.com/placeholder/users/AntoineD75")
+  user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   user = User.create!(
     image: "https://plus.unsplash.com/premium_photo-1682125971065-3af13302adcd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2hhdWZmZSUyMGVhdXxlbnwwfHwwfHx8MA%3D%3D",
@@ -239,6 +245,9 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
     password: 'azertyui',
   )
 
+  file = URI.open("https://kitt.lewagon.com/placeholder/users/kimdnls")
+  user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
+
   user = User.create!(
     image: "https://images.unsplash.com/photo-1606340671662-27ee685dd111?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hhdWZmZSUyMGVhdXxlbnwwfHwwfHx8MA%3D%3D",
     company_name: "La bonne douche froide !",
@@ -252,6 +261,9 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
     email: "eau2@test.com",
     password: 'azertyui',
   )
+
+  file = URI.open("https://kitt.lewagon.com/placeholder/users/axd42")
+  user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   user = User.create!(
     image: "https://images.unsplash.com/photo-1635604866833-70844856de75?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dmVudGlsYXRpb258ZW58MHx8MHx8fDA%3D",
@@ -267,6 +279,9 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
     password: 'azertyui',
   )
 
+  file = URI.open("https://kitt.lewagon.com/placeholder/users/ZenaGiulia")
+  user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
+
   user = User.create!(
     image: "https://images.unsplash.com/photo-1574334292321-4844f63aefef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dmVudGlsYXRpb258ZW58MHx8MHx8fDA%3D",
     company_name: "Le zefffffff !!!",
@@ -280,3 +295,6 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
     email: "ventilation2@test.com",
     password: 'azertyui',
   )
+
+  file = URI.open("https://kitt.lewagon.com/placeholder/users/stabbianneni")
+  user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
