@@ -30,15 +30,19 @@
       <% end %>
       <div class="project-composition">
         <ul>
-          <li><%= @project.description %></li>
-          <li><%= @project.location %></li>
+          <li class="project-list"><span class="fw-bold">Description de votre projet :</span> <%= @project.description %></li>
+          <li class="project-list"><span class="fw-bold">Adresse :</span> <%= @project.location %></li>
+          <li class="project-list"><span class="fw-bold">Surface de votre bien :</span> <%= @project.surface %></li>
+          <li class="project-list"><span class="fw-bold">Nombre de pièce :</span> <%= @project.nombre_de_pieces %></li>
+          <li class="project-list"><span class="fw-bold">Budget de vos travaux :</span> <%= @project.budget %></li>
+          <li class="project-list"><span class="fw-bold">Date de début souhaité :</span> <%= @project.start_date %></li>
         </ul>
         <br>
         <br>
         <h5><strong><%= "Votre sélection des artisans :" %></strong></h5>
         <ul>
           <% @project.project_requests.each do |project_request| %>
-            <li><strong><%= project_request.user.company_name %></strong></li>
+            <li><%= project_request.user.company_name %></li>
           <% end %>
         </ul>
       </div>
