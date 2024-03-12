@@ -36,19 +36,43 @@
             </div>
           </div>
           <div class="col d-none" data-target='formtoggle.page2'>
-            <h3> <span class="number-round">1</span> Description de votre projet</h3>
-            <%= f.input :title, label: 'Titre' %>
-            <%= f.input :description %>
-            <h3> <span class="number-round">2</span> Vos besoins</h3>
-            <%= f.input :surface %>
-            <%= f.input :nombre_de_pieces, label: "Nombre de pièces" %>
-            <%= f.input :budget %>
-            <%= f.input :start_date, label: 'Date de début de votre projet', as: :string, input_html: { data: { datepicker_target: "startDate"} } %>
-            <%= f.input :photo, as: :file %>
-            <h3> <span class="number-round">3</span> Votre lieu d'intervention</h3>
-            <%= f.input :location, label: 'Adresse', input_html: { data: { location_autocomplete_target: "address" }},
-            wrapper_html: { data: { controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"] }} %>
-            <%= f.submit "Créer mon projet", class: "btn-main" %>
+            <div class="page2-grid">
+              <div class="section-container">
+                <h4> <span class="number-round">1</span> Spécifications </h4>
+                <div data-controller="range">
+                  <p>Nombre de pièces: <span data-range-target="span1">5</span></p>
+                  <%= f.input :nombre_de_pieces, label: false, as: :range, input_html: { class: "form-range mb-3", min: 1, max: 10, step: 1, data: {action:"change->range#update", value:'1'}}  %>
+                  <p>Surface: <span data-range-target="span2">100</span>m2</p>
+                  <%= f.input :surface, label: false, as: :range, input_html: { class: "form-range mb-3", min: 5, max: 200, step: 5, data: {action:"change->range#update", value:'2'} } %>
+                  <p>Budget: <span data-range-target="span3">250000</span>€</p>
+                  <%= f.input :budget, label: false, as: :range, input_html: { class: "form-range mb-3", min: 500, max: 500000, step: 1000, data: {action:"change->range#update", value:'3'} }  %>
+                </div>
+              </div>
+
+              <div class="section-container">
+                <h4> <span class="number-round">2</span> Date et lieu d'intervention</h4>
+                <div data-controller="range">
+                  <%= f.input :start_date, label: 'Date de début de votre projet', as: :string, input_html: { data: { datepicker_target: "startDate"} } %>
+                  <%= f.input :location, label: 'Adresse', input_html: { data: { location_autocomplete_target: "address" }, class: "d-none" },
+                  wrapper_html: { data: { controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"] } } %>
+                </div>
+              </div>
+
+
+              <div class="section-container">
+                <h4> <span class="number-round">3</span> Finalisez votre projet</h4>
+                <div data-controller="range">
+                  <%= f.input :title, label: 'Nom de votre projet' %>
+                  <%= f.input :description, label: 'Donnez plus de détails à vos artisans' %>
+                  <%= f.input :photo, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: "#{content_tag(:i, nil, class: 'fa-solid fa-images')} Téléchargez un document".html_safe %>
+                  <div class="d-flex justify-content-end">
+                    <%= button_tag(type: "submit", class: "btn-main") do %>
+                      Suivant <i class="fa-solid fa-arrow-right"></i>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         <% end %>
       </div>
