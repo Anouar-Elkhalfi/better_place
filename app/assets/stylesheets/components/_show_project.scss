@@ -1,0 +1,24 @@
+.card-project{
+  background-color:white;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+.chat-project {
+  margin-top: 30px;
+  position: sticky;
+  top: 20px; /* Adjust as needed based on your layout */
+  background-color: green;
+  padding: 20px;
+  height: 100vh; /* Ensure the div expands based on content */
+  overflow-y: auto;
+}
+
+.project-spec {
+  padding-top: 10px;
+}
+
+.project-spec h1 {
+  text-align: center;
+}
+
