@@ -10,6 +10,8 @@
     </div>
     <div class="button-container">
       <p><i class="fa-solid fa-heart" style="color: red; margin-right: 5px;"></i><%= artisan.benefit %></p>
+      <button type="button" class="btn btn-main" data-bs-toggle="modal"      data-bs-target="#ArtisanModal-<%= artisan.id %>">Launch demo modal
+      </button>
       <%= button_to "Envoyer mon projet", project_project_requests_path(project, artisan_id: artisan.id), method: :post, class: "btn-main" %>
     </div>
   </div>
