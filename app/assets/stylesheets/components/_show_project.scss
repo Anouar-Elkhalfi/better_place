@@ -10,12 +10,17 @@
   margin-top: 50px;
   position: sticky;
   top: 0px; /* Adjust as needed based on your layout */
-  background-color: green;
+  background-color: rgb(255, 255, 255);
   padding: 20px;
   height: 100vh; /* Ensure the div expands based on content */
   overflow-y: auto;
   margin-bottom: 50px;
 }
+
+.chat-project h2{
+  color: black;
+}
+
 
 .project-spec {
   padding-top: 10px;
