@@ -30,7 +30,7 @@ start:function(t){var e=this.getEventPayload("search.start",t);if(e.queryString)
    * @private
    * @param {Object} keyEvent the keydown event to log
    * @param {Object} geocoder a mapbox-gl-geocoder instance
-   * 
+   *
    */
 keyevent:function(t,e){if(t.key&&!t.metaKey&&-1===[9,27,37,39,13,38,40].indexOf(t.keyCode)){var i=this.getEventPayload("search.keystroke",e);i.lastAction=t.key;if(i.queryString)return this.push(i)}},
 /**
@@ -90,13 +90,13 @@ getSelectedIndex:function(t,e){if(e._typeahead){var i=e._typeahead.data;var o=t.
 push:function(t,e){this.eventQueue.push(t);(this.eventQueue.length>=this.maxQueueSize||e)&&this.flush()},remove:function(){this.flush()}};c=MapboxEventManager$1;var p=c;var g={};var f={de:"Suche",it:"Ricerca",en:"Search",nl:"Zoeken",fr:"Chercher",ca:"Cerca",he:"לחפש",ja:"サーチ",lv:"Meklēt",pt:"Procurar",sr:"Претрага",zh:"搜索",cs:"Vyhledávání",hu:"Keresés",ka:"ძიება",nb:"Søke",sk:"Vyhľadávanie",th:"ค้นหา",fi:"Hae",is:"Leita",ko:"수색",pl:"Szukaj",sl:"Iskanje",fa:"جستجو",ru:"Поиск"};g={placeholder:f};var m=g;var _={};function Geolocation$1(){}Geolocation$1.prototype={isSupport:function(){return Boolean(window.navigator.geolocation)},getCurrentPosition:function(){const t={enableHighAccuracy:true};return new Promise((function(e,i){window.navigator.geolocation.getCurrentPosition(e,i,t)}))}};_=Geolocation$1;var v=_;var y={};
 /**
  * This function transforms the feature from reverse geocoding to plain text with specified accuracy
- * @param {object} feature 
- * @param {string} accuracy 
- * @returns 
+ * @param {object} feature
+ * @param {string} accuracy
+ * @returns
  */function transformFeatureToGeolocationText(t,e){const i=getAddressInfo(t);const o=["address","street","place","country"];var n;if("function"===typeof e)return e(i);const s=o.indexOf(e);n=-1===s?o:o.slice(s);return n.reduce((function(t,e){if(!i[e])return t;""!==t&&(t+=", ");return t+i[e]}),"")}
 /**
  * This function transforms the feature from reverse geocoding to AddressInfo object
- * @param {object} feature 
+ * @param {object} feature
  * @returns {object}
  */function getAddressInfo(t){const e=t.address||"";const i=t.text||"";const o=t.place_name||"";const n=o.split(",")[0];const s={address:n,houseNumber:e,street:i,placeName:o};t.context.forEach((function(t){const e=t.id.split(".")[0];s[e]=t.text}));return s}y={transformFeatureToGeolocationText:transformFeatureToGeolocationText,getAddressInfo:getAddressInfo};var b=y;var E="default"in t?t.default:t;var x="default"in e?e.default:e;var w="default"in i?i.default:i;var L="default"in o?o.default:o;var k="default"in n?n.default:n;var C="default"in s?s.default:s;var S="default"in a?a.default:a;var M={};var T=E;var A=x;var B=w;var I=L.EventEmitter;var G=h;var P=k;var R=C;var O=p;var z=m;var q=S;var F=v;var N=b;const D={FORWARD:0,LOCAL:1,REVERSE:2};function getFooterNode(){var t=document.createElement("div");t.className="mapboxgl-ctrl-geocoder--powered-by";t.innerHTML='<a href="https://www.mapbox.com/search-service" target="_blank">Powered by Mapbox</a>';return t}
 /**
@@ -435,4 +435,3 @@ on:function(t,e){this._eventEmitter.on(t,e);return this},
    * @param {Function} fn Function that should unsubscribe to the event emitted.
    */
 off:function(t,e){this._eventEmitter.removeListener(t,e);this.eventManager.remove();return this}};M=MapboxGeocoder;var Q=M;export{Q as default};
-
