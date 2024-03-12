@@ -1,45 +1,52 @@
-
-    <div class="row justify-content: space-between">
-    <%= render "shared/sidebar" %>
-      <div class="card-project col-8">
-        <div class='project-spec'>
-          <h5>Projet :</h5><h1><%= @project.title %></h1>
-          <p><i><%= @project.description %>.</i></p>
-
-          <div class="cards">
-            <div class="card-category" style="background-color: #ffedd7">
-              <p>Localisation du chantier : <%= @project.location %></p>
-            </div>
-
-            <div class="card-category" style="background-color: #ffedd7">
-              <p>Budget idéal : <%= @project.budget %> €</p>
-            </div>
-
-            <div class="card-category" style="background-color: #ffedd7">
-              <p>Date dé début de travaux souhaité : <%= Date.parse(@project.start_date).strftime("%d %B %Y") %></p>
-            </div>
+<div class="row justify-content: space-between">
+  <%= render "shared/sidebar" %>
+  <div class="card-project col-6">
+    <div class='project-spec'>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(@project.photo.key) %>)">
+      <h1><%= @project.title %></h1>
+    </div>
+        <p>Description : <br><i><%= @project.description %>.</i></p>
+        <div class="project-spec-info">
+          <div class="project-spec-info-category">
+            <i class="fa-solid fa-location-pin"></i>
+            <p><%= @project.location %></p>
           </div>
+          <div class="project-spec-info-category">
+            <i class="fa-solid fa-wallet"></i>
+            <p><%= @project.budget %> €</p>
+          </div>
+          <div class="project-spec-info-category">
+            <i class="fa-regular fa-calendar"></i>
+            <p><%= Date.parse(@project.start_date).strftime("%d %B %Y") %></p>
+          </div>
+        </div>
+          <h2 class="fonts">Mes travaux</h2>
+        <div class="project-spec-info">
 
+          <% @project_works.each do |project_work| %>
+            <div class="project-spec-info-works">
+               <%= image_tag image_for_work(project_work), width: 35, height: 35, class: "ldslkdssdk" %>
+              <p><strong><%= project_work.name %></strong></p>
 
-          <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :fill %>
-        <div>
-         <% @project_works.each do |project_work| %>
-            <p> <strong><%= project_work.name %></strong></p>
-            <ul>
-              <% artisans_for_work = User.where(skill: project_work.name) %>
-              <% artisans_for_work.each do |artisan| %>
-                <li>
-                  <p>Company Name: <%= artisan.company_name %></p>
-                  <% project_request = ProjectRequest.find_by(user_id: artisan.id, project_id: @project.id) %>
-                  <p>Status: <%= project_request.status if project_request %></p>
-                </li>
-              <% end %>
-            </ul>
+              <ul>
+                <% artisans_for_work = User.where(skill: project_work.name) %>
+                <% artisans_for_work.each do |artisan| %>
+                  <li>
+                    <p>Company Name: <%= artisan.company_name %></p>
+                    <% project_request = ProjectRequest.find_by(user_id: artisan.id, project_id: @project.id) %>
+                    <p>Status: <%= project_request.status if project_request %></p>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
           <% end %>
         </div>
-        </div>
-      </div>
-      <div class="chat-project col-2" data-controller="project-subscription" data-project-subscription-project-id-value="<%= @project.id %>">
+        <h4>Vos photos</h4>
+        <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :fill %>
+    </div>
+
+  </div>
+  <div class="chat-project col-3" data-controller="project-subscription" data-project-subscription-project-id-value="<%= @project.id %>">
         <h2>Chat</h2>
         <div class="messages" data-project-subscription-target="messages">
           <% @project.messages.each do |message| %>
@@ -53,5 +60,5 @@
         wrapper_html: {class: "flex-grow-1"}%>
         <%= f.submit "Send", class: "btn btn-primary mb-3" %>
         <% end %>
-      </div>
-    </div>
+  </div>
+</div>
