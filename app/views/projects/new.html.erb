@@ -46,8 +46,8 @@
             <%= f.input :start_date, label: 'Date de début de votre projet', as: :string, input_html: { data: { datepicker_target: "startDate"} } %>
             <%= f.input :photo, as: :file %>
             <h3> <span class="number-round">3</span> Votre lieu d'intervention</h3>
-            <%= f.input :location, label: 'Adresse', input_html: {data: {location_autocomplete_target: "Adresse"}},
-            wrapper_html: {data: {controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
+            <%= f.input :location, label: 'Adresse', input_html: { data: { location_autocomplete_target: "address" }},
+            wrapper_html: { data: { controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"] }} %>
             <%= f.submit "Créer mon projet", class: "btn-main" %>
           </div>
         <% end %>

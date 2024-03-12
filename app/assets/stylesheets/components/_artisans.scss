@@ -1,8 +1,20 @@
+.count-progression {
+  margin: 15px 0px;
+}
+
+.barre-progression {
+  margin-bottom: 30px;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 16px;
   margin-bottom: 90px;
+}
+
+.btn-open-modal {
+  margin: 20px 0px;
 }
 
 .custom-button {
@@ -21,6 +33,15 @@
   object-fit: cover;
 }
 
+.image-user {
+  display: block;
+  border-radius: 7px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
 .card{
   display: flex;
   height: 100%;
@@ -32,11 +53,7 @@
   margin-bottom: 20px;
 }
 
-h2 {
-  color: #E0B3B5;
-}
-
-h5 {
+.artisan-name {
   color: gray;
 }
 .card-body {
@@ -57,7 +74,7 @@ h5 {
 .artisans-list {
   background-color: white;
   padding: 0 40px;
-  border-radius: 40px;
+  border-radius: 20px;
 }
 
 .project-selection {
@@ -67,7 +84,7 @@ h5 {
   justify-content: flex-start;
   padding-left: 40px;
   margin-left: 20px;
-  border-radius: 40px;
+  border-radius: 20px;
 }
 
 .project-composition {
