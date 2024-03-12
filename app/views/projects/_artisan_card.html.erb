@@ -1,18 +1,15 @@
 <div class="card">
   <img src="<%= artisan.image %>" class="card-img-top">
   <div class="card-body">
-    <div class="card-text">
+    <div class="card-artisan card-text">
       <h3 class="card-title"><%= artisan.company_name %></h3>
-      <h5><%= artisan.first_name %> <%= artisan.last_name %></h5>
+      <h5 class="artisan-name"><%= artisan.first_name %> <%= artisan.last_name %></h5>
       <h6><%= "Expertise : #{artisan.skill}" %></h6>
-      <br>
-      <p><%= artisan.address %></p>
     </div>
     <div class="button-container">
-      <p><i class="fa-solid fa-heart" style="color: red; margin-right: 5px;"></i><%= artisan.benefit %></p>
-      <button type="button" class="btn btn-main" data-bs-toggle="modal"      data-bs-target="#ArtisanModal-<%= artisan.id %>">Launch demo modal
+      <button type="button" class="btn-open-modal btn btn-main" data-bs-toggle="modal"      data-bs-target="#ArtisanModal-<%= artisan.id %>">En voir plus
       </button>
-      <%= button_to "Envoyer mon projet", project_project_requests_path(project, artisan_id: artisan.id), method: :post, class: "btn-main" %>
+      <!--<%= button_to "Envoyer mon projet", project_project_requests_path(project, artisan_id: artisan.id), method: :post, class: "btn-main" %>-->
     </div>
   </div>
 </div>
