@@ -7,7 +7,14 @@
       </div>
       <div class="modal-body">
         <img src="<%= artisan.image %>" class="img-modal">
-        <h4 class="artisan-name"><%= artisan.first_name %> <%= artisan.last_name %></h5>
+        <div class="artisan-name-avatar d-flex">
+          <h4 class="artisan-name"><%= artisan.first_name %> <%= artisan.last_name %></h4>
+          <% if artisan.photo.key == nil %>
+            <h3>No photo</h3>
+          <% else %>
+            <%= cl_image_tag artisan.photo.key, crop: :fill, class:"avatar-large" %>
+          <% end %>
+        </div>
         <h5><%= "Expertise : #{artisan.skill}" %></h6>
         <p><%= artisan.address %></p>
         <h6><i class="fa-solid fa-heart" style="color: red; margin-right: 5px;"></i><%= artisan.benefit %></h6>
