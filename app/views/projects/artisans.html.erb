@@ -5,7 +5,7 @@
     <div class="barre-progression progress bg-warning">
       <div data-formtoggle-target="progress" class="progress-bar bg-warning" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
-
+  </div>
 
     <div class="artisans-list col-12 col-lg-6">
       <h2 style='text-align: center; margin:30px;'><strong>Veuillez sélectionner des artisans pour votre projet</strong></h2>
@@ -22,6 +22,13 @@
         <ul>
           <li><%= @project.description %></li>
           <li><%= @project.location %></li>
+          
+          <% if @project.photo.attached? %>
+            <%= cl_image_tag @project.photo.key, height: 300, width: 400, crop: :fill %>
+          <% else %>
+            <%= image_tag "travaux.png", height: 300, width: 400 %>
+          <% end %>
+          
         </ul>
         <br>
         <br>
