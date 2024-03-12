@@ -18,3 +18,19 @@
   border-radius: 50px;
   text-decoration: none;
 }
+.btn-main input[type="submit"] {
+  background-color: transparent;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-main d-flex{
+  font-size: 18px;
+  padding: 10px 20px;
+}
