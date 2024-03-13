@@ -20,7 +20,7 @@
         <h6><i class="fa-solid fa-heart" style="color: red; margin-right: 5px;"></i><%= artisan.benefit %></h6>
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <%= button_to "Envoyer mon projet", project_project_requests_path(project, artisan_id: artisan.id), method: :post, class: "btn-modal btn-main" %>
+        <%= button_to "Ajouter l'artisan", project_project_requests_path(project, artisan_id: artisan.id), method: :post, class: "btn-modal btn-main" %>
       </div>
     </div>
   </div>

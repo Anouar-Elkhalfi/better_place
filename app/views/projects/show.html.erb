@@ -2,7 +2,12 @@
   <%= render "shared/sidebar" %>
     <div class="card-project col-6">
       <div class='project-spec'>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(@project.photo.key) %>)">
+       <% if @project.photo.present? && @project.photo.attached? %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(@project.photo.key) %>)">
+        <% else %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path('travaux.png') %>)">
+        <% end %>
+
         <h1><%= @project.title %></h1>
       </div>
           <p>Description : <br><i><%= @project.description %>.</i></p>
@@ -32,12 +37,43 @@
                 <ul>
                   <% artisans_for_work = User.where(skill: project_work.name) %>
                   <% artisans_for_work.each do |artisan| %>
-                    <div class='project-spec-info-entreprise'>
 
-                        <p>Entreprise : <%= artisan.company_name %></p>
-                        <% project_request = ProjectRequest.find_by(user_id: artisan.id, project_id: @project.id) %>
-                        <p>Status: <%= project_request.status if project_request %></p>
-                    </div>
+                    
+
+
+
+            <div class='project-spec-info-entreprise'>
+                    <li>
+                      <p>Company Name: <%= artisan.company_name %></p>
+                      <% project_request = ProjectRequest.find_by(user_id: artisan.id, project_id: @project.id) %>
+                      <p>Status: <%= project_request.status if project_request %></p>
+
+                      <%# Reviews %>
+
+
+                    <% if project_request %>
+                      <% if project_request.review %>
+                        <p>Rating:
+                          <% rating = project_request.review.rating.to_i %>
+                          <% (1..5).each do |i| %>
+                            <% if i <= rating %>
+                              <i class="fas fa-star"></i>
+                            <% else %>
+                              <i class="far fa-star"></i>
+                            <% end %>
+                          <% end %>
+                        </p>
+                        <p>Comment: <%= project_request.review.comment %></p>
+                      <% else %>
+                        <%= link_to "Donner mon avis", new_project_request_review_path(project_request) %>
+                      <% end %>
+                    <% end %>
+
+
+
+                    </li>
+                </div>
+
                   <% end %>
                 </ul>
               </div>
