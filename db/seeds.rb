@@ -4,7 +4,7 @@ ProjectWork.destroy_all
 Work.destroy_all
 ProjectRequest.destroy_all
 User.where(role: 'artisan').destroy_all
-puts "deleted"
+puts "betterplace is the best project: ==> all project deleted"
 
 Work.create!(
   name: "plafond",
