@@ -1,6 +1,16 @@
-<h1>New review</h1>
-<%= simple_form_for [@project_request, @review] do |f| %>
-  <%= f.input :rating %>
-  <%= f.input :comment %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
+<div class="container mt-5"> <!-- Add mt-5 for top margin -->
+  <div class="row">
+    <div class="col"></div> <!-- Empty column for spacing -->
+    <div class="col-6 d-flex justify-content-center align-items-center review-container">
+      <!-- Your form starts here -->
+      <h1 class="text-center mb-4"></h1>
+      <%= simple_form_for [@project_request, @review], html: { class: "review-form" } do |f| %>
+        <%= f.input :rating, input_html: { class: "form-control" } %>
+        <%= f.input :comment, input_html: { class: "form-control" } %>
+        <%= f.submit "Submit Review", class: "btn btn-primary" %>
+      <% end %>
+      <!-- Your form ends here -->
+    </div>
+    <div class="col"></div> <!-- Empty column for spacing -->
+  </div>
+</div>

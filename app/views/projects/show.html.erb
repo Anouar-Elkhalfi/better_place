@@ -42,14 +42,27 @@
                       <p>Status: <%= project_request.status if project_request %></p>
 
                       <%# Reviews %>
-                      <% if project_request %>
-                        <% if project_request.review %>
-                          <p>Rating: <%= project_request.review.rating %></p>
-                          <p>Comment: <%= project_request.review.comment %></p>
-                        <% else %>
-                          <%= link_to "donner mon avis",  new_project_request_review_path(project_request) %>
-                        <% end %>
+
+
+                    <% if project_request %>
+                      <% if project_request.review %>
+                        <p>Rating:
+                          <% rating = project_request.review.rating.to_i %>
+                          <% (1..5).each do |i| %>
+                            <% if i <= rating %>
+                              <i class="fas fa-star"></i>
+                            <% else %>
+                              <i class="far fa-star"></i>
+                            <% end %>
+                          <% end %>
+                        </p>
+                        <p>Comment: <%= project_request.review.comment %></p>
+                      <% else %>
+                        <%= link_to "Donner mon avis", new_project_request_review_path(project_request) %>
                       <% end %>
+                    <% end %>
+
+
 
                     </li>
                   <% end %>
