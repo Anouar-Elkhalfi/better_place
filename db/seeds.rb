@@ -267,7 +267,7 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   user = User.create!(
     image: "https://images.unsplash.com/photo-1635604866833-70844856de75?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dmVudGlsYXRpb258ZW58MHx8MHx8fDA%3D",
-    company_name: "Snif Snif... C'est qui ?!",
+    company_name: "Le soufflet",
     first_name: "Caroline",
     last_name: "Lavoie",
     address: "45 Rue du Cherche-Midi, 75006 Paris",
@@ -284,7 +284,7 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   user = User.create!(
     image: "https://images.unsplash.com/photo-1574334292321-4844f63aefef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dmVudGlsYXRpb258ZW58MHx8MHx8fDA%3D",
-    company_name: "Le zefffffff !!!",
+    company_name: "Le zefff !",
     first_name: "François",
     last_name: "Morin",
     address: "3 Rue de la Michodière, 75002 Paris",
