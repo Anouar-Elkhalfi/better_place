@@ -4,6 +4,7 @@
   margin-top: 50px;
   margin-bottom: 50px;
   flex-grow: 1;
+  padding-bottom: 20px;
 }
 
 .chat-project {
@@ -15,6 +16,8 @@
   height: 100vh; /* Ensure the div expands based on content */
   overflow-y: auto;
   margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
 .chat-project h2{
@@ -34,17 +37,30 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 16px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  text-align: center;
 }
 
 .project-spec-info-category {
   background-color: #fffaf1;
-  box-shadow: 5px 5px 15px 5px #000000;
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.11);
+  padding: 10px 5px 5px 5px;
   text-align: center;
+}
+.project-spec-info-entreprise {
+  text-align: left;
+  margin-top: 20px;
+}
+.project-spec-info-works-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
 }
 
 .project-spec-info-works {
   background-color: #fffaf1;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 10px 5px 5px 5px
 }
 .fonts{
   text-align: center;
@@ -64,4 +80,43 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
+}
+
+.fa-location-pin {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+.fa-wallet {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.fa-calendar {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 0px 10px 0px 10px;
+}
+.inline-elements {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0px 20px 0px;
+}
+
+.inline-elements h2 {
+  margin-right: 10px;
+}
+
+.fa-comments {
+ font-size: 32px;
+}
+
+.chat-title-message {
+  background-color: #fffaf1;
 }
