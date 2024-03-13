@@ -39,12 +39,12 @@
                     <li>
                       <p>Company Name: <%= artisan.company_name %></p>
                       <% project_request = ProjectRequest.find_by(user_id: artisan.id, project_id: @project.id) %>
-                      <p>Status: <%= project_request.status if project_request %></p>
+
 
                       <%# Reviews %>
 
 
-                    <% if project_request %>
+                   <% if project_request %>
                       <% if project_request.review %>
                         <p>Rating:
                           <% rating = project_request.review.rating.to_i %>
@@ -57,9 +57,10 @@
                           <% end %>
                         </p>
                         <p>Comment: <%= project_request.review.comment %></p>
-                      <% else %>
-                        <%= link_to "Donner mon avis", new_project_request_review_path(project_request) %>
-                      <% end %>
+                          <% else %>
+                            <%= link_to "Donner mon avis", new_project_request_review_path(project_request), class: "btn btn-primary custom-button-review" %>
+                          <% end %>
+
                     <% end %>
 
 
