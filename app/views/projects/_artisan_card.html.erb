@@ -1,15 +1,15 @@
-<div class="card">
+<div class="card-artisan">
   <img src="<%= artisan.image %>" class="card-img-top">
-  <div class="card-body">
-    <div class="card-artisan card-text">
-      <h3 class="card-title"><%= artisan.company_name %></h3>
+  <div class="card-artisan-content d-flex flex-column justify-content-between" >
+    <div>
+      <h3><%= artisan.company_name %></h3>
       <h5 class="artisan-name"><%= artisan.first_name %> <%= artisan.last_name %></h5>
       <h6><%= "Expertise : #{artisan.skill}" %></h6>
     </div>
-    <div class="button-container">
-      <button type="button" class="btn-open-modal btn btn-main" data-bs-toggle="modal"      data-bs-target="#ArtisanModal-<%= artisan.id %>">En voir plus
+    <div class="button-container d-flex justify-content-between">
+      <button type="button" class="btn-open-modal btn btn-ghost" data-bs-toggle="modal"      data-bs-target="#ArtisanModal-<%= artisan.id %>">En savoir plus <i class="fa-solid fa-circle-info"></i>
       </button>
-      <!--<%= button_to "Envoyer mon projet", project_project_requests_path(project, artisan_id: artisan.id), method: :post, class: "btn-main" %>-->
+      <%= button_to "Ajouter l'artisan", project_project_requests_path(project, artisan_id: artisan.id), method: :post, class: "btn btn-card-artisan" %>
     </div>
   </div>
 </div>
