@@ -4,6 +4,7 @@ ProjectWork.destroy_all
 Work.destroy_all
 ProjectRequest.destroy_all
 User.where(role: 'artisan').destroy_all
+puts "deleted"
 
 Work.create!(
   name: "plafond",
@@ -54,7 +55,7 @@ Work.create!(
   recommanded_performance: "",
   image_url: "ventilation.png"
 )
-
+puts "work creation successful"
 # Les artisans
 
 
@@ -298,3 +299,5 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   file = URI.open("https://kitt.lewagon.com/placeholder/users/stabbianneni")
   user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
+
+puts "User creation successfully"
