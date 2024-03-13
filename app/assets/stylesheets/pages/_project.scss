@@ -8,11 +8,12 @@
   width: 75%;
 }
 
-.curved-container{
+.progress-top {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1em;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .card-new {
@@ -118,6 +119,5 @@ h3.reduce-margin {
   margin: -10px 0px;
 }
 h2.reduce-m{
-  margin: 3px 0px;
-  margin-top: -31px;
+  padding: 1rem 0px 0.5rem;
 }
