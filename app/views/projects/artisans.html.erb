@@ -1,3 +1,5 @@
+
+<!-- NEW TEST TO DISPLAY PICTURE OF WORKS AND TITLE AT THE SAME LEVEL-->
 <div class='container-fluid custom-container'>
 
   <div class="row justify-content-center my-4">
@@ -20,16 +22,24 @@
       </div>
     </div>
 
-    <div class="project-selection col-12 col-lg-4">
-      <h2 style='text-align: center; margin:30px'><strong><%= @project.title %></strong></h2>
-      <% if @project.photo.attached? %>
-        <%= cl_image_tag @project.photo.key, height: 200, width: 300, crop: :fill, class: "image-user"%>
-      <% else %>
-        <%= image_tag "travaux.png", height: 200, width: 300, class: "image-user" %>
-      <% end %>
-      <div class="button-confirmation">
-        <%= link_to "Confirmez mon projet", project_path(@project), class: "btn-main" %>
+    <div class="project-selection-header col-12 col-lg-4">
+      <div class='header-card-artisan'>
+        <div class='header-card-artisan-title'>
+          <% if @project.photo.attached? %>
+            <%= cl_image_tag @project.photo.key, crop: :fill, class: "image-user col-6"%>
+          <% else %>
+            <%= image_tag "travaux.png", class: "image-user col-6" %>
+          <% end %>
+          <div class="col-6 d-flex flex-column justify-content-around h-100">
+            <h2 class="text-center"><strong><%= @project.title %></strong></h2>
+            <div class="button-confirmation text-center">
+              <%= link_to "Confirmez mon projet", project_path(@project), class: "btn-main" %>
+            </div>
+          </div>
+        </div>
       </div>
+    <div class="project-selection-artisans">
+
       <div class="project-composition">
         <% if @project_artisans.any? %>
           <h5><strong>Votre sélection des artisans :</strong></h5>
@@ -54,6 +64,7 @@
       </div>
       <br>
       <br>
+    </div>
     </div>
 
   </div>
