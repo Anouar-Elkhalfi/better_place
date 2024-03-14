@@ -4,58 +4,73 @@
   <title>La page que vous cherchez n'existe pas (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
+       html, body{
     margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: sans-serif;
+    background-color: #fffaf1;
   }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
+  h1, a{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
   }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  .section{
+    padding: 4rem 2rem;
   }
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
+  .section .error{
+    font-size: 150px;
+    color: #fca602;
+    text-shadow:
+      1px 1px 1px #fca602,
+      2px 2px 1px #fca602
+      3px 3px 1px #fca602
+      4px 4px 1px #fca602
+      5px 5px 1px #fca602
+      6px 6px 1px #fca602
+      7px 7px 1px #fca602
+      8px 8px 1px #fca602
+      25px 25px 8px rgba(0,0,0, 0.2);
   }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  .page{
+    margin: 2rem 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #444;
+  }
+
+  .back-home{
+    display: inline-block;
+    border: 2px solid #222;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0.75rem 1rem 0.6rem;
+    transition: all 0.2s linear;
+    box-shadow: 0 15px 15px -11px rgba(0,0,0, 0.4);
+    background: #222;
+    border-radius: 6px;
+  }
+  .back-home:hover{
+    background: #222;
+    color: #ddd;
   }
   </style>
 </head>
 
+
 <body class="rails-default-error-page">
   <!-- This file lives in public/404.html -->
-  <img src="/500.jpg" alt="Image d'erreur" class="error-image">
+  <div class="section">
+    <h1 class="error">500</h1>
+    <div class="page">Oouups !!! La page n'existe pas !</div>
+    <a class="back-home" href="https://www.better-place.co/">Page d'accueil</a>
+  </div>
+
 </body>
 </html>
