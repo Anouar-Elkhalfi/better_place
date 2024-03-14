@@ -48,8 +48,12 @@
       <i class="fa-regular fa-comments"></i>
     </div>
         <div class="messages" data-project-subscription-target="messages">
-          <% @project.messages.each do |message| %>
-            <%= render "messages/message", message: message %>
+          <% if @project.messages.any? %>
+            <% @project.messages.each do |message| %>
+              <%= render "messages/message", message: message %>
+            <% end %>
+          <% else %>
+            <p>Vous n'avez pas encore reçu de messages.</p>
           <% end %>
         </div>
         <%= simple_form_for [@project, @message], html: {class: "d-flex"} do |f|%>
@@ -61,5 +65,3 @@
         <% end %>
   </div>
 </div>
-</div>
-lorem ipsumlorem ipsum
