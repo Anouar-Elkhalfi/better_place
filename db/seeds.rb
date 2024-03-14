@@ -55,6 +55,26 @@ Work.create!(
   image_url: "ventilation.png"
 )
 
+
+
+user = User.create!(
+  image: "",
+  company_name: "",
+  first_name: "Pedro",
+  last_name: "Pinto",
+  address: "1 villa cendrier 93400 Saint-Ouen",
+  phone_number: "",
+  role: '',
+  skill: "",
+  benefit: "",
+  email: "pedro@test.com",
+  password: '12345678',
+)
+file = URI.open("https://kitt.lewagon.com/placeholder/users/Pedrog75")
+user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
+
+
+
 # Les artisans
 
 
@@ -71,7 +91,7 @@ user = User.create!(
   email: "plafond1@test.com",
   password: 'azertyui',
 )
-file = URI.open("https://kitt.lewagon.com/placeholder/users/lakhlifia")
+file = URI.open("https://kitt.lewagon.com/placeholder/users/dadopiece")
 user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
 
@@ -109,7 +129,7 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
     password: 'azertyui',
   )
 
-  file = URI.open("https://kitt.lewagon.com/placeholder/users/Pedrog75")
+  file = URI.open("https://kitt.lewagon.com/placeholder/users/constance-lsf")
   user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   user = User.create!(
@@ -143,7 +163,7 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
     password: 'azertyui',
   )
 
-  file = URI.open("https://kitt.lewagon.com/placeholder/users/wilfried-fosse")
+  file = URI.open("https://kitt.lewagon.com/placeholder/users/Gabgab679")
   user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   user = User.create!(
@@ -177,7 +197,7 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
     password: 'azertyui',
   )
 
-  file = URI.open("https://kitt.lewagon.com/placeholder/users/wilfried-fosse")
+  file = URI.open("https://kitt.lewagon.com/placeholder/users/Anne-Alois")
   user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   user = User.create!(
@@ -228,7 +248,7 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
     password: 'azertyui',
   )
 
-  file = URI.open("https://kitt.lewagon.com/placeholder/users/AntoineD75")
+  file = URI.open("https://kitt.lewagon.com/placeholder/users/IsaiahZalc")
   user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   user = User.create!(

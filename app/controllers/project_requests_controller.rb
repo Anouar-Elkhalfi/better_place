@@ -10,11 +10,11 @@ class ProjectRequestsController < ApplicationController
     if @project_request.save
       # Handle successful creation
 
-      flash[:notice] = 'Project request created successfully!'
+      flash[:notice] = "L'artisan a bien été ajouté à votre projet"
       redirect_to artisans_project_path(@project)
     else
       # Handle validation errors or other issues
-      flash[:alert] = 'Failed to create project request.'
+      flash[:alert] = "L'artisan n'a pas été ajouté à votre projet"
       puts "Errors: #{@project_request.errors.full_messages}"
       redirect_to @project
     end
