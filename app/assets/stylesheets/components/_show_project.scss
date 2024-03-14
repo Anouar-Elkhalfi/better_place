@@ -1,12 +1,18 @@
 .card-project{
   background-color:white;
-  // margin-left: 20px;
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 0px;
   flex-grow: 1;
-  padding-bottom: 20px;
+  padding-bottom: 0px;
   border-radius: 20px;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  padding-left: 0px;
+  height: 75vh;
+}
+
+.padding-left-0 {
+  padding-left: 0px!important;
 }
 
 
@@ -15,7 +21,8 @@
   position: sticky;
   top: 0px;
   padding: 20px;
-  max-height: calc(100vh - 100px);
+  // max-height: calc(100vh - 120px);
+  height: 75vh;
   overflow-y: auto;
   margin-bottom: 50px;
   display: flex;
@@ -82,34 +89,18 @@
 }
 
 .card-category {
+  position: relative;
   background-size: cover;
   background-position: center;
-  height: 180px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: white;
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-bottom: 30px;
-  flex-direction: column;
-}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px 0 0 20px
 
-.fa-location-pin {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
-.fa-wallet {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
-
-.fa-calendar {
-  font-size: 32px;
-  margin-bottom: 10px;
 }
 
 .messages {
@@ -144,4 +135,62 @@
 
 .show-content {
   margin: 0 40px;
+}
+
+
+.card-picture-info {
+  position: absolute;
+  text-align: center;
+}
+
+.card-project-location {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.card-project-budget-date {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.info-project{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  i {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+}
+
+.info-works{
+  padding-left: 10px;
+  padding-bottom: 26px;
+  flex-direction: column;
+  align-items: start;
+  display: flex;
+  gap: 10px;
+}
+
+.info-works-card {
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+  // align-items: center;
+  // justify-content: center;
+}
+
+.info-works-card-company {
+  p {
+    margin-bottom: 0px!important;
+  }
+}
+
+.card-info-project {
+  border: solid grey 1px;
+  border-radius: 4px;
+  padding: 2px 12px;
 }

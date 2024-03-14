@@ -28,13 +28,13 @@
 
 .card-artisan {
   border: 1px solid rgb(201, 199, 199);
-  padding: 0.5rem;
+
   border-radius: 12px;
   overflow: hidden;
   .card-artisan-content {
     h3 { margin: 0 }
     height: 50%;
-    padding-top: 8px;
+    padding: 10px;
   }
 }
 

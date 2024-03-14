@@ -42,12 +42,12 @@
               <div class="section-container">
                 <h4 class="mb-4"> <span class="number-round">1</span> Spécifications </h4>
                 <div data-controller="range">
-                  <p>Nombre de pièces: <span data-range-target="span1">4</span></p>
-                  <%= f.input :nombre_de_pieces, label: false, as: :range, input_html: { class: "form-range mb-3", min: 1, max: 10, step: 1, value: 4, data: {action:"change->range#update", value:'1'}}  %>
-                  <p>Surface: <span data-range-target="span2">100</span>m2</p>
+                  <p>Nombre de pièces: <strong><span data-range-target="span1">8</span></strong></p>
+                  <%= f.input :nombre_de_pieces, label: false, as: :range, input_html: { class: "form-range mb-3", min: 1, max: 15, step: 1, value: 8, data: {action:"change->range#update", value:'1'}}  %>
+                  <p>Surface: <strong><span data-range-target="span2">100</span>m2</strong></p>
                   <%= f.input :surface, label: false, as: :range, input_html: { class: "form-range mb-3", min: 5, max: 200, step: 5, data: {action:"change->range#update", value:'2'} } %>
-                  <p>Budget: <span data-range-target="span3">250000</span>€</p>
-                  <%= f.input :budget, label: false, as: :range, input_html: { class: "form-range mb-3", min: 500, max: 500000, step: 100, data: {action:"change->range#update", value:'3'} }  %>
+                  <p>Budget: <strong><span data-range-target="span3">50000</span>€</strong></p>
+                  <%= f.input :budget, label: false, as: :range, input_html: { class: "form-range mb-3", min: 500, max: 100000, step: 5©00, data: {action:"change->range#update", value:'3'} }  %>
                 </div>
               </div>
 
@@ -66,9 +66,7 @@
                 <div data-controller="range">
                   <%= f.input :title, label: 'Nom de votre projet' %>
                   <%= f.input :description, label: 'Donnez plus de détails à vos artisans' %>
-                  <div data-controller="upload">
-                    <%= f.input :photo, input_html: { class: 'd-none', data: { action: 'change->upload#change' } }, label_html: { class: 'upload-photo'}, label: "#{content_tag(:i, nil, class: 'fa-solid fa-images')} Téléchargez un document".html_safe %>
-                  </div>
+                  <%= f.input :photo, input_html: { class: 'd-none',  }, label_html: { class: 'upload-photo'}, label: "#{content_tag(:i, nil, class: 'fa-solid fa-images')} Téléchargez un document".html_safe %>
                   <div class="d-flex justify-content-end">
                     <%= button_tag(type: "submit", class: "btn-main") do %>
                       Suivant <i class="fa-solid fa-arrow-right"></i>

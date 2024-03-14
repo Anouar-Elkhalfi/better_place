@@ -40,21 +40,20 @@
     </div>
   </div>
 
-   <div class="chat-project col-3" data-controller="project-subscription" data-project-subscription-project-id-value="<%= @project.id %>" data-project-subscription-current-user-id-value="<%= current_user.id %>">
-
-          <h2>Chat</h2>
-          <div class="messages" data-project-subscription-target="messages">
-            <% @project.messages.each do |message| %>
-              <%= render "messages/message", message: message %>
-            <% end %>
-          </div>
-          <%= simple_form_for [@project, @message], html: {class: "d-flex", data: { action: "submit->project-subscription#empty" }} do |f|%>
-            <%= f.input :content,
-              label: false,
-              placeholder: "Message",
-              wrapper_html: {class: "flex-grow-1"}
-            %>
-            <%= f.submit "Envoyer", class: "btn btn-chat mb-3" %>
-          <% end %>
+  <div class="chat-project col-3" data-controller="project-subscription" data-project-subscription-project-id-value="<%= @project.id %>" data-project-subscription-current-user-id-value="<%= current_user.id %>">
+    <h2>Chat</h2>
+    <div class="messages" data-project-subscription-target="messages">
+      <% @project.messages.each do |message| %>
+        <%= render "messages/message", message: message %>
+      <% end %>
+    </div>
+    <%= simple_form_for [@project, @message], html: {class: "d-flex", data: { action: "submit->project-subscription#empty" }} do |f|%>
+      <%= f.input :content,
+        label: false,
+        placeholder: "Message",
+        wrapper_html: {class: "flex-grow-1"}
+      %>
+      <%= f.submit "Envoyer", class: "btn btn-chat mb-3" %>
+    <% end %>
   </div>
 </div>

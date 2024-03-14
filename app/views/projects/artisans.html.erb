@@ -31,16 +31,6 @@
         <%= link_to "Confirmez mon projet", project_path(@project), class: "btn-main" %>
       </div>
       <div class="project-composition">
-        <ul>
-          <li class="project-list"><span class="fw-bold">Description de votre projet :</span> <%= @project.description %></li>
-          <li class="project-list"><span class="fw-bold">Adresse :</span> <%= @project.location %></li>
-          <li class="project-list"><span class="fw-bold">Surface de votre bien :</span> <%= @project.surface %></li>
-          <li class="project-list"><span class="fw-bold">Nombre de pièce :</span> <%= @project.nombre_de_pieces %></li>
-          <li class="project-list"><span class="fw-bold">Budget de vos travaux :</span> <%= @project.budget %></li>
-          <li class="project-list"><span class="fw-bold">Date de début souhaité :</span> <%= @project.start_date %></li>
-        </ul>
-        <br>
-        <br>
         <% if @project_artisans.any? %>
           <h5><strong>Votre sélection des artisans :</strong></h5>
         <% else %>
@@ -50,6 +40,16 @@
           <% @project.project_requests.each do |project_request| %>
             <li><%= project_request.user.company_name %></li>
           <% end %>
+        </ul>
+        <br>
+        <br>
+        <ul class="list-unstyled">
+          <li class="project-list"><span class="fw-bold">Description de votre projet :</span> <%= @project.description %></li>
+          <li class="project-list"><span class="fw-bold">Adresse :</span> <%= @project.location %></li>
+          <li class="project-list"><span class="fw-bold">Surface de votre bien :</span> <%= @project.surface %></li>
+          <li class="project-list"><span class="fw-bold">Nombre de pièce :</span> <%= @project.nombre_de_pieces %></li>
+          <li class="project-list"><span class="fw-bold">Budget de vos travaux :</span> <%= @project.budget %></li>
+          <li class="project-list"><span class="fw-bold">Date de début souhaité :</span> <%= @project.start_date %></li>
         </ul>
       </div>
       <br>
