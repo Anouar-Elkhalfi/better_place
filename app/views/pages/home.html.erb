@@ -1,15 +1,18 @@
 <div class="banner1">
-  <div class="container-fluid banner-bg-img h-82">
-    <div class="container">
+  <div class="container-fluid banner-bg-img">
+    <div class="containerbanner1">
       <h1 class="hometitle">La rénovation en toute simplicité</h1>
       <p class="homesubtitle">Trouvez les experts pour mener à bien vos travaux de rénovation énergétique.</p>
       <a class="btn-main" href="<%= new_project_path %>">Commencez</a>
     </div>
   </div>
+  <a href="#start">
+    <i class="fa-solid fa-chevron-down fa-bounce"></i>
+  </a>
 </div>
 
 
-<section class="d-flex align-items-center justify-content-between bg-white container-fluid">
+<section id="start" class="d-flex align-items-center justify-content-between bg-white container-fluid">
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-6 col-lg-4">
@@ -73,11 +76,13 @@
 </section>
 
 <section class="d-flex align-items-center justify-content-between main-container" style="background-color: #F1F0FF;">
-  <%= image_tag "househome.png", width: 400 %>
+  <div style="padding-right: 75px;">
+    <%= image_tag "househome.png", width: 400 %>
+  </div>
   <div>
-    <h3 style="display: block;">Vos travaux en toute serenité.</h3>
+    <h3 style="display: block">Vos travaux en toute serenité.</h3>
     <p>
-      Better Place sélectionne les meilleurs artisans pour vos travaux de rénovation. Trouvez l'expert technique répondant à vos besoins et concevez votre projet en toute confiance.
+      Better Place sélectionne les meilleurs artisans pour vos travaux de rénovation. Trouvez l'expert technique répondant à besoins et concevez votre projet en toute confiance.
     </p>
   </div>
 </section>
@@ -89,5 +94,7 @@
       La rénovation énergétique est essentielle pour lutter contre les biens polluants et excessivement énergivores. Faites des économies d'énergie significatives, améliorez votre qualité de vie et valorisez votre patrimoine grâce à Better Place.
     </p>
   </div>
-  <%= image_tag "imagebanner4.png", width: 400 %>
+  <div style="padding-left: 75px">
+    <%= image_tag "imagebanner4.png", width: 400 %>
+  </div>
 </section>

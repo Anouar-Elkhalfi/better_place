@@ -4,7 +4,7 @@
     <div>
       <h3><%= artisan.company_name %></h3>
       <h5 class="artisan-name"><%= artisan.first_name %> <%= artisan.last_name %></h5>
-      <h6><%= "Expertise : #{artisan.skill}" %></h6>
+      <h6><%= artisan.skill %></h6>
     </div>
     <div class="button-container d-flex justify-content-between">
       <% if project_artisans.include?(artisan) %>
