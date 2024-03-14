@@ -47,7 +47,7 @@
                   <p>Surface: <strong><span data-range-target="span2">100</span>m2</strong></p>
                   <%= f.input :surface, label: false, as: :range, input_html: { class: "form-range mb-3", min: 5, max: 200, step: 5, data: {action:"change->range#update", value:'2'} } %>
                   <p>Budget: <strong><span data-range-target="span3">50000</span>€</strong></p>
-                  <%= f.input :budget, label: false, as: :range, input_html: { class: "form-range mb-3", min: 500, max: 100000, step: 5000, data: {action:"change->range#update", value:'3'} }  %>
+                  <%= f.input :budget, label: false, as: :range, input_html: { class: "form-range mb-3", min: 500, max: 100000, step: 500, data: {action:"change->range#update", value:'3'} }  %>
                 </div>
               </div>
 
