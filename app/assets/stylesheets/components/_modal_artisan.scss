@@ -1,3 +1,13 @@
+.modal-header {
+  border: 0;
+  padding: 0 16px;
+  padding-top: 16px;
+}
+
+.modal-body {
+  padding: 0 16px;
+}
+
 .modal-content {
   border-radius: 12px;
 }
@@ -27,4 +37,8 @@
 
 .artisan-name-avatar {
   margin: 10px 0px;
+}
+
+.modal-footer {
+  border-top: 0;
 }
