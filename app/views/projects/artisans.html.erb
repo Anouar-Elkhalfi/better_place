@@ -41,7 +41,11 @@
         </ul>
         <br>
         <br>
-        <h5><strong><%= "Votre sélection des artisans :" %></strong></h5>
+        <% if @project_artisans.any? %>
+          <h5><strong>Votre sélection des artisans :</strong></h5>
+        <% else %>
+          <h5><strong>Aucun artisan sélectionné."</strong></h5>
+        <% end %>
         <ul>
           <% @project.project_requests.each do |project_request| %>
             <li><%= project_request.user.company_name %></li>

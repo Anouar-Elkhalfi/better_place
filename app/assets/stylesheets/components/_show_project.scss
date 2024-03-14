@@ -44,13 +44,21 @@
 
 .project-spec-info-category {
   background-color: #fffaf1;
-  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.11);
+  border: 1px solid rgb(201, 199, 199);
   padding: 10px 5px 5px 5px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
 }
 .project-spec-info-entreprise {
   text-align: left;
   margin-top: 20px;
+  padding-left: 8px;
+  i {
+    font-size: 22px;
+  }
 }
 .project-spec-info-works-icon {
   font-size: 32px;
@@ -59,8 +67,9 @@
 
 .project-spec-info-works {
   background-color: #fffaf1;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding: 10px 5px 5px 5px
+  border: 1px solid rgb(201, 199, 199);
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
 }
 .fonts{
   text-align: center;
