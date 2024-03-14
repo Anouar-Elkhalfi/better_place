@@ -1,47 +1,45 @@
-<div class="row justify-content: space-around gap-4 show-content">
+<div class="padding-left-0 row justify-content: space-around gap-4 show-content">
   <div class="card-project col-6">
-    <div class='project-spec'>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @project.photo.present? && @project.photo.attached? ? cl_image_path(@project.photo.key) : image_path('travaux.png') %>)">
+    <div class='card-category col-6'style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @project.photo.present? && @project.photo.attached? ? cl_image_path(@project.photo.key) : image_path('travaux.png') %>)">
+      <div class='card-picture-info'>
         <h1><%= @project.title %></h1>
-        <p><i><%= @project.description %>.</i></p>
+        <h3><i><%= @project.description %>.</i></h3>
       </div>
     </div>
-    <div class="project-spec-info">
-      <div class="project-spec-info-category">
-        <i class="fa-solid fa-location-pin"></i>
-        <p><%= @project.location %></p>
-      </div>
-      <div class="project-spec-info-category">
-        <i class="fa-solid fa-wallet"></i>
-        <p><%= @project.budget %> €</p>
-      </div>
-      <div class="project-spec-info-category">
-        <i class="fa-regular fa-calendar"></i>
-        <p><%= Date.parse(@project.start_date).strftime("%d %B %Y") %></p>
-      </div>
-    </div>
-    <h2 class="fonts">Mes travaux</h2>
-    <div class="project-spec-info">
-      <% @project_works.each do |project_work| %>
-        <div class="project-spec-info-works">
-          <div class="project-spec-info-works-icon">
-            <%= image_tag image_for_work(project_work), width: 35, height: 35, class: "ldslkdssdk" %>
-          </div>
-          <h4><strong><%= project_work.name %></strong></h4>
-
-            <% @artisans.where(skill: project_work.name).each do |artisan| %>
-
-              <div class='project-spec-info-entreprise'>
-                  <p class=''><i class="fa-solid fa-person-digging me-2"></i> <%= artisan.company_name %></p>
-              </div>
-
-            <% end %>
-
+    <div class='col-6 px-4 d-flex flex-column justify-content-between'>
+      <div class='info-project'>
+        <div class='card-project-location d-flex align-items-center'>
+          <i class="fa-solid fa-location-dot me-2 mb-0"></i>
+          <p class="mb-0"><%= @project.location %></p>
         </div>
-      <% end %>
+        <div class='card-project-budget-date'>
+          <div class='card-info-project card-info-project-budget d-flex align-items-center'>
+            <%# <i class="mb-0 me-2 fa-solid fa-euro-sign"></i> %>
+            <p class="mb-0"><%= @project.budget %> €</p>
+          </div>
+          <div class='card-info-project card-info-project-date d-flex align-items-center'>
+            <%# <i class="me-2 mb-0 fa-regular fa-calendar"></i> %>
+            <p class="mb-0"><%= Date.parse(@project.start_date).strftime("%d %B %Y") %></p>
+          </div>
+        </div>
+      </div>
+      <div class='info-works'>
+        <% @project_works.each do |project_work| %>
+          <div class='info-works-card'>
+            <%= image_tag image_for_work(project_work), width: 35, height: 35, class: "ldslkdssdk" %>
+            <div class='info-works-card-company'>
+              <h4><strong><%= project_work.name %></strong></h4>
+              <% @artisans.where(skill: project_work.name).each do |artisan| %>
+                <p class=''><%= artisan.company_name %></p>
+                <%# <i class="fa-solid fa-person-digging me-2"></i> %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
-
   </div>
+
   <div class="chat-project col-3" data-controller="project-subscription" data-project-subscription-project-id-value="<%= @project.id %>">
     <div class='inline-elements'>
       <h2>Chat</h2>
