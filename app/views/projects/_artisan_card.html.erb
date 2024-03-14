@@ -7,9 +7,14 @@
       <h6><%= "Expertise : #{artisan.skill}" %></h6>
     </div>
     <div class="button-container d-flex justify-content-between">
-      <button type="button" class="btn-open-modal btn btn-ghost" data-bs-toggle="modal"      data-bs-target="#ArtisanModal-<%= artisan.id %>">En savoir plus <i class="fa-solid fa-circle-info"></i>
-      </button>
-      <%= button_to "Ajouter l'artisan", project_project_requests_path(project, artisan_id: artisan.id), method: :post, class: "btn btn-card-artisan" %>
+      <% if project_artisans.include?(artisan) %>
+        <p class="artisan-select">Artisan sélectionné</p>
+      <% else %>
+        <button type="button" class="btn-open-modal btn btn-ghost" data-bs-toggle="modal"      data-bs-target="#ArtisanModal-<%= artisan.id %>">En savoir plus <i class="fa-solid fa-circle-info"></i>
+        </button>
+
+        <%= button_to "Ajouter l'artisan", project_project_requests_path(project, artisan_id: artisan.id), method: :post, class: "btn btn-card-artisan" %>
+      <% end %>
     </div>
   </div>
 </div>

@@ -15,7 +15,7 @@
       <h2 style='text-align: center; margin:30px;'><strong>Veuillez sélectionner des artisans pour votre projet</strong></h2>
       <div class="cards">
         <% @artisans.each do |artisan| %>
-          <%= render partial: 'artisan_card', locals: { artisan: artisan, project: @project } %>
+          <%= render partial: 'artisan_card', locals: { artisan: artisan, project: @project, project_artisans: @project_artisans } %>
         <% end %>
       </div>
     </div>
