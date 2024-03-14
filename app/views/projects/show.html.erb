@@ -51,9 +51,9 @@
                       <%# Reviews %>
 
 
-                    <% if project_request %>
+                   <% if project_request %>
                       <% if project_request.review %>
-                        <p>Rating:
+                        <div class="rating">
                           <% rating = project_request.review.rating.to_i %>
                           <% (1..5).each do |i| %>
                             <% if i <= rating %>
@@ -62,12 +62,12 @@
                               <i class="far fa-star"></i>
                             <% end %>
                           <% end %>
-                        </p>
-                        <p>Comment: <%= project_request.review.comment %></p>
+                        </div>
                       <% else %>
-                            <%= link_to "Donner mon avis", new_project_request_review_path(project_request), class: "btn-main" %>
-                          <% end %>
+                        <%= link_to "Donner mon avis", new_project_request_review_path(project_request), class: "btn btn-main" %>
+                      <% end %>
                     <% end %>
+
 
 
 
