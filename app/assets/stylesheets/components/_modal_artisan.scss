@@ -1,7 +1,16 @@
 .modal-header {
   border: 0;
   padding: 0 16px;
-  padding-top: 16px;
+  padding-top: 12px;
+}
+
+.chauffage {
+  position: relative;
+  top: -5px;
+}
+
+.modal-header img {
+  margin-right: 20px;
 }
 
 .modal-body {
