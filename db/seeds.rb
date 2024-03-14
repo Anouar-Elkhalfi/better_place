@@ -4,6 +4,7 @@ ProjectWork.destroy_all
 Work.destroy_all
 ProjectRequest.destroy_all
 User.where(role: 'artisan').destroy_all
+puts "betterplace is the best project: ==> all project deleted"
 
 Work.create!(
   name: "plafond",
@@ -55,25 +56,7 @@ Work.create!(
   image_url: "ventilation.png"
 )
 
-
-
-user = User.create!(
-  image: "",
-  company_name: "",
-  first_name: "Pedro",
-  last_name: "Pinto",
-  address: "1 villa cendrier 93400 Saint-Ouen",
-  phone_number: "",
-  role: '',
-  skill: "",
-  benefit: "",
-  email: "pedro@test.com",
-  password: '12345678',
-)
-file = URI.open("https://kitt.lewagon.com/placeholder/users/Pedrog75")
-user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
-
-
+puts "work creation successful"
 
 # Les artisans
 
@@ -318,3 +301,5 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   file = URI.open("https://kitt.lewagon.com/placeholder/users/stabbianneni")
   user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
+
+puts "User creation successfully"
