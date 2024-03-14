@@ -2,7 +2,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <%= image_tag image_for_skill(artisan.skill), width: 40, height: 40, class: "ldslkdssdk" %>
+        <%= image_tag image_for_skill(artisan.skill), width: 40, height: 40, class: artisan.skill %>
         <h1 class="modal-title fs-3 text-center" id="exampleModalLabel"><%= artisan.company_name %></h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
