@@ -1,23 +1,28 @@
 .card-project{
   background-color:white;
-  margin-left: 20px;
+  // margin-left: 20px;
   margin-top: 50px;
   margin-bottom: 50px;
   flex-grow: 1;
   padding-bottom: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
 }
+
 
 .chat-project {
   margin-top: 50px;
   position: sticky;
-  top: 0px; /* Adjust as needed based on your layout */
-  background-color: rgb(255, 255, 255);
+  top: 0px;
   padding: 20px;
-  height: 100vh; /* Ensure the div expands based on content */
+  max-height: calc(100vh - 100px);
   overflow-y: auto;
   margin-bottom: 50px;
   display: flex;
   flex-direction: column;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border-radius: 20px;
 }
 
 .chat-project h2{
@@ -44,13 +49,21 @@
 
 .project-spec-info-category {
   background-color: #fffaf1;
-  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.11);
+  border: 1px solid rgb(201, 199, 199);
   padding: 10px 5px 5px 5px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
 }
 .project-spec-info-entreprise {
   text-align: left;
   margin-top: 20px;
+  padding-left: 8px;
+  i {
+    font-size: 22px;
+  }
 }
 .project-spec-info-works-icon {
   font-size: 32px;
@@ -59,8 +72,9 @@
 
 .project-spec-info-works {
   background-color: #fffaf1;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding: 10px 5px 5px 5px
+  border: 1px solid rgb(201, 199, 199);
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
 }
 .fonts{
   text-align: center;
@@ -78,9 +92,10 @@
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 30px;
+  flex-direction: column;
 }
 
 .fa-location-pin {
@@ -119,4 +134,14 @@
 
 .chat-title-message {
   background-color: #fffaf1;
+}
+
+.btn-chat {
+  background-color: #FCA601;
+  margin-left: 6px;
+  color: white;
+}
+
+.show-content {
+  margin: 0 40px;
 }

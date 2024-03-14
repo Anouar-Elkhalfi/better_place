@@ -2,6 +2,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
+        <%= image_tag image_for_skill(artisan.skill), width: 40, height: 40, class: artisan.skill %>
         <h1 class="modal-title fs-3 text-center" id="exampleModalLabel"><%= artisan.company_name %></h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -15,7 +16,7 @@
             <%= cl_image_tag artisan.photo.key, crop: :fill, class:"avatar-large" %>
           <% end %>
         </div>
-        <h5><%= "Expertise : #{artisan.skill}" %></h6>
+        <h5><%= artisan.skill %></h6>
         <p><%= artisan.address %></p>
         <h6><i class="fa-solid fa-heart" style="color: red; margin-right: 5px;"></i><%= artisan.benefit %></h6>
       </div>

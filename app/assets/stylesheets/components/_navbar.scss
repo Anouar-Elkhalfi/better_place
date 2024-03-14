@@ -1,6 +1,6 @@
 .navbar-betterplace {
   justify-content: space-between;
-  background: white;
+  background-color: white;
   padding: 0 !important;
 }
 .navbar-betterplace .navbar-collapse {
@@ -27,4 +27,15 @@
 .nav-item:hover .btn-secondary {
   background-color: #443c42;
   color: white;
+}
+.container-fluid{
+  background-color: transparent;
+}
+
+.navbar-home {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 10;
 }

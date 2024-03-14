@@ -55,15 +55,17 @@ Work.create!(
   recommanded_performance: "",
   image_url: "ventilation.png"
 )
+
 puts "work creation successful"
+
 # Les artisans
 
 
 user = User.create!(
   image: "https://plus.unsplash.com/premium_photo-1683140667565-c6bca7b1a48d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  company_name: "Les Moulures Kevin !",
+  company_name: "Greniot & filles",
   first_name: "Ines",
-  last_name: "Reg",
+  last_name: "Greniot",
   address: "10 Rue de la Paix, 75002 Paris",
   phone_number: "01 56 78 90 12",
   role: 'artisan',
@@ -72,7 +74,7 @@ user = User.create!(
   email: "plafond1@test.com",
   password: 'azertyui',
 )
-file = URI.open("https://kitt.lewagon.com/placeholder/users/lakhlifia")
+file = URI.open("https://kitt.lewagon.com/placeholder/users/dadopiece")
 user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
 
@@ -80,7 +82,7 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   user = User.create!(
     image: "https://images.unsplash.com/photo-1482731215275-a1f151646268?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGxhZm9uZHxlbnwwfHwwfHx8MA%3D%3D",
-    company_name: "Le Plat fond",
+    company_name: "Plafond Repair",
     first_name: "Alain",
     last_name: "Dupont",
     address: "23 Avenue des Champs-Élysées, 75008 Paris",
@@ -98,7 +100,7 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   user = User.create!(
     image: "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNoYXVmZmFnZXxlbnwwfHwwfHx8MA%3D%3D",
-    company_name: "Le Col Roulé",
+    company_name: "Eco Chauffage",
     first_name: "Sophie",
     last_name: "Martin",
     address: "5 Rue du Faubourg Saint-Honoré, 75008 Paris",
@@ -110,12 +112,12 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
     password: 'azertyui',
   )
 
-  file = URI.open("https://kitt.lewagon.com/placeholder/users/Pedrog75")
+  file = URI.open("https://kitt.lewagon.com/placeholder/users/constance-lsf")
   user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   user = User.create!(
     image: "https://images.unsplash.com/photo-1615238168944-6ed817aeb4ae?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNoYXVmZmFnZXxlbnwwfHwwfHx8MA%3D%3D",
-    company_name: "Mon Chou-fage !",
+    company_name: "Expert Chauffage",
     first_name: "Antoine",
     last_name: "Lefèvre",
     address: "14 Quai de la Tournelle, 75005 Paris",
@@ -132,7 +134,7 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   user = User.create!(
     image: "https://plus.unsplash.com/premium_photo-1681824506412-50cd4150e6d0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cG9ydGVzJTIwZXQlMjBmZW4lQzMlQUF0cmVzJTIwdHJhdmF1eHxlbnwwfHwwfHx8MA%3D%3D",
-    company_name: "Porte par la fenêtre",
+    company_name: "Windoor",
     first_name: "Charlotte",
     last_name: "Dumas",
     address: "32 Rue de la Roquette, 75011 Paris",
@@ -144,7 +146,7 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
     password: 'azertyui',
   )
 
-  file = URI.open("https://kitt.lewagon.com/placeholder/users/wilfried-fosse")
+  file = URI.open("https://kitt.lewagon.com/placeholder/users/Gabgab679")
   user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   user = User.create!(
@@ -166,7 +168,7 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   user = User.create!(
     image: "https://plus.unsplash.com/premium_photo-1683120912204-c16b67c17008?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bXVycyUyMGNoYW50aWVyfGVufDB8fDB8fHww",
-    company_name: "Le Dos au Mur",
+    company_name: "Murs ecologiques",
     first_name: "Émilie",
     last_name: "Leroux",
     address: "7 Rue de Rivoli, 75004 Paris",
@@ -178,12 +180,12 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
     password: 'azertyui',
   )
 
-  file = URI.open("https://kitt.lewagon.com/placeholder/users/wilfried-fosse")
+  file = URI.open("https://kitt.lewagon.com/placeholder/users/Anne-Alois")
   user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   user = User.create!(
     image: "https://plus.unsplash.com/premium_photo-1663127394496-e51b145ff547?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bXVycyUyMGNoYW50aWVyfGVufDB8fDB8fHww",
-    company_name: "La tête dans le mur",
+    company_name: "Incassable",
     first_name: "Vincent",
     last_name: "Beauchamp",
     address: "29 Rue de la Pompe, 75116 Paris",
@@ -200,7 +202,7 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   user = User.create!(
     image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGxhbmNoZXIlMjBjaGFudGllcnxlbnwwfHwwfHx8MA%3D%3D",
-    company_name: "La terre est basse",
+    company_name: "Plancher Artisan",
     first_name: "Céline",
     last_name: "Renaud",
     address: "12 Avenue Montaigne, 75008 Paris",
@@ -217,7 +219,7 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   user = User.create!(
     image: "https://plus.unsplash.com/premium_photo-1682148119915-169e1332362a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGxhbmNoZXIlMjBjaGFudGllcnxlbnwwfHwwfHx8MA%3D%3D",
-    company_name: "Look the plancher !",
+    company_name: "Artisan parqueteur",
     first_name: "Alexandre",
     last_name: "Boucher",
     address: "21 Quai Branly, 75007 Paris",
@@ -229,12 +231,12 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
     password: 'azertyui',
   )
 
-  file = URI.open("https://kitt.lewagon.com/placeholder/users/AntoineD75")
+  file = URI.open("https://kitt.lewagon.com/placeholder/users/IsaiahZalc")
   user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   user = User.create!(
     image: "https://plus.unsplash.com/premium_photo-1682125971065-3af13302adcd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2hhdWZmZSUyMGVhdXxlbnwwfHwwfHx8MA%3D%3D",
-    company_name: "C'est chauuuudd !",
+    company_name: "Heliotherm",
     first_name: "Élise",
     last_name: "Mercier",
     address: "8 Rue de la Grange aux Belles, 75010 Paris",
@@ -251,7 +253,7 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   user = User.create!(
     image: "https://images.unsplash.com/photo-1606340671662-27ee685dd111?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hhdWZmZSUyMGVhdXxlbnwwfHwwfHx8MA%3D%3D",
-    company_name: "La bonne douche froide !",
+    company_name: "Eaunergie",
     first_name: "Nicolas",
     last_name: "Bertrand",
     address: "17 Rue de la Verrerie, 75004 Paris",
@@ -268,7 +270,7 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   user = User.create!(
     image: "https://images.unsplash.com/photo-1635604866833-70844856de75?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dmVudGlsYXRpb258ZW58MHx8MHx8fDA%3D",
-    company_name: "Le soufflet",
+    company_name: "Renov'Eco",
     first_name: "Caroline",
     last_name: "Lavoie",
     address: "45 Rue du Cherche-Midi, 75006 Paris",
@@ -285,7 +287,7 @@ user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
   user = User.create!(
     image: "https://images.unsplash.com/photo-1574334292321-4844f63aefef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dmVudGlsYXRpb258ZW58MHx8MHx8fDA%3D",
-    company_name: "Le zefff !",
+    company_name: "Azur Distrib",
     first_name: "François",
     last_name: "Morin",
     address: "3 Rue de la Michodière, 75002 Paris",

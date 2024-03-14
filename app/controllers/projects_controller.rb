@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
     authorize @project
 
     @message = Message.new
+    @artisans = User.joins(:project_requests).where('project_requests.project' => @project)
   end
 
   def new
@@ -29,6 +30,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     authorize @project
     @artisans = User.where(role: 'artisan', skill: @project.works.pluck(:name))
+    @project_artisans = User.joins(:project_requests).where('project_requests.project' => @project)
   end
 
   def edit

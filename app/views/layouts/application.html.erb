@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
@@ -24,5 +24,12 @@
         <%= yield %>
       </div>
     <%= render "shared/footer" %>
+    <script>
+    $(document).ready(function() {
+      $(".alert.alert-info").fadeOut(2000);
+      $(".alert.alert-success").fadeOut(2000);
+      $(".alert.alert-danger").fadeOut(2000);
+    });
+  </script>
   </body>
 </html>

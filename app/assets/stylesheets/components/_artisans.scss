@@ -27,7 +27,7 @@
 }
 
 .card-artisan {
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgb(201, 199, 199);
   padding: 0.5rem;
   border-radius: 12px;
   overflow: hidden;
@@ -67,10 +67,19 @@
   padding-left: 40px;
   margin-left: 20px;
   border-radius: 20px;
+  height: fit-content;
 }
 
 .project-composition {
   margin-inline: 20px;
   padding-left: 20px;
   border-left: 2px solid #FCA601;
+}
+
+.artisan-select {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  font-weight: 600;
+  color: grey;
 }

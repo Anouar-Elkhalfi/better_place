@@ -15,7 +15,7 @@
       <h2 style='text-align: center; margin:30px;'><strong>Veuillez sélectionner des artisans pour votre projet</strong></h2>
       <div class="cards">
         <% @artisans.each do |artisan| %>
-          <%= render partial: 'artisan_card', locals: { artisan: artisan, project: @project } %>
+          <%= render partial: 'artisan_card', locals: { artisan: artisan, project: @project, project_artisans: @project_artisans } %>
         <% end %>
       </div>
     </div>
@@ -41,7 +41,11 @@
         </ul>
         <br>
         <br>
-        <h5><strong><%= "Votre sélection des artisans :" %></strong></h5>
+        <% if @project_artisans.any? %>
+          <h5><strong>Votre sélection des artisans :</strong></h5>
+        <% else %>
+          <h5><strong>Aucun artisan sélectionné.</strong></h5>
+        <% end %>
         <ul>
           <% @project.project_requests.each do |project_request| %>
             <li><%= project_request.user.company_name %></li>
