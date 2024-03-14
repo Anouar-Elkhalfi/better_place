@@ -1,11 +1,11 @@
-<div class="row justify-content: space-around">
+<div class="row justify-content: space-around gap-4 show-content">
   <div class="card-project col-6">
     <div class='project-spec'>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @project.photo.present? && @project.photo.attached? ? cl_image_path(@project.photo.key) : image_path('travaux.png') %>)">
+        <h1><%= @project.title %></h1>
+        <p><i><%= @project.description %>.</i></p>
       </div>
-      <h1><%= @project.title %></h1>
     </div>
-    <p>Description : <br><i><%= @project.description %>.</i></p>
     <div class="project-spec-info">
       <div class="project-spec-info-category">
         <i class="fa-solid fa-location-pin"></i>
@@ -27,17 +27,16 @@
           <div class="project-spec-info-works-icon">
             <%= image_tag image_for_work(project_work), width: 35, height: 35, class: "ldslkdssdk" %>
           </div>
-          <h2 class="fonts">Mes travaux</h2>
-          <div class="project-spec-info">
-            <h4><strong><%= project_work.name %></strong></h4>
-              <% @artisans.where(skill: project_work.name).each do |artisan| %>
+          <h4><strong><%= project_work.name %></strong></h4>
 
-                <div class='project-spec-info-entreprise'>
-                    <p class=''><i class="fa-solid fa-person-digging me-2"></i> <%= artisan.company_name %></p>
-                </div>
+            <% @artisans.where(skill: project_work.name).each do |artisan| %>
 
-              <% end %>
-          </div>
+              <div class='project-spec-info-entreprise'>
+                  <p class=''><i class="fa-solid fa-person-digging me-2"></i> <%= artisan.company_name %></p>
+              </div>
+
+            <% end %>
+
         </div>
       <% end %>
     </div>
@@ -58,7 +57,7 @@
         label: false,
         placeholder: "Message",
         wrapper_html: {class: "flex-grow-1"}%>
-        <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+        <%= f.submit "Envoyer", class: "btn btn-chat mb-3" %>
         <% end %>
   </div>
 </div>
