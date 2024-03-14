@@ -31,7 +31,7 @@
             <% @project_works.each do |project_work| %>
               <div class="project-spec-info-works">
                 <div class="project-spec-info-works-icon">
-                  <%= image_tag image_for_work(project_work), width: 35, height: 35, class: "ldslkdssdk" %>
+                  <%= image_tag image_for_work(project_work), width: 35, height: 35%>
                 </div>
                 <h4><strong><%= project_work.name %></strong></h4>
                 <ul>
@@ -68,9 +68,6 @@
                       <% end %>
                     <% end %>
 
-
-
-
                     </li>
                 </div>
 
@@ -98,8 +95,9 @@
               placeholder: "Message",
               wrapper_html: {class: "flex-grow-1"}
             %>
-            <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+            <%= f.submit "Envoyer", class: "btn btn-chat mb-3" %>
           <% end %>
     </div>
 
 </div>
+																																			
