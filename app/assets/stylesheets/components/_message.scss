@@ -12,10 +12,23 @@
 }
 
 .receiver-style {
-  background-color: #EAEAEA; /* Couleur de fond pour les messages reçus */
 }
 
 /* Effet 3D */
 .message-bubble {
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #EAEAEA; /* Couleur de fond pour les messages reçus */
+  align-self: flex-start; /* Pour aligner à gauche */
+}
+
+.message-row {
+  justify-content: flex-start;
+}
+
+.current-user-is-author {
+  justify-content: flex-end;
+  .message-bubble {
+    background-color: #DCF8C6; /* Couleur de fond pour les messages envoyés */
+    align-self: flex-end;
+  }
 }

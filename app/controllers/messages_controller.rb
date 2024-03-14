@@ -9,10 +9,13 @@ class MessagesController < ApplicationController
     if @message.save
       ProjectChannel.broadcast_to(
         @project,
-        render_to_string(partial: "message", locals: {message: @message})
-      )
-        redirect_to project_path(@project)
+        {
+          html: render_to_string(partial: "message", locals: {message: @message}),
+          author_id: @message.user.id
+        }
 
+      )
+      head :ok
     else
       render "projects/show", status: :unprocessable_entity
     end
