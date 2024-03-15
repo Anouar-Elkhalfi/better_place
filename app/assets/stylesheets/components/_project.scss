@@ -87,3 +87,13 @@ ul.suggestions {
 .mapboxgl-ctrl-geocoder--powered-by {
   display: none!important;
 }
+
+.suggestions li {
+  cursor: pointer;
+}
+
+.new-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
