@@ -74,7 +74,7 @@ user = User.create!(
   email: "plafond1@test.com",
   password: 'azertyui',
 )
-file = URI.open("https://kitt.lewagon.com/placeholder/users/Pedrog75")
+file = URI.open("https://kitt.lewagon.com/placeholder/users/opheliske")
 user.photo.attach(io: file, filename: "avatar.jpg", content_type: "image/jpeg")
 
 
